@@ -2,1294 +2,229 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BirthdayVerse V3 ❤️</title>
 
-<meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>BirthdayVerse V3 ❤️</title>
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/hero.css">
-<link rel="stylesheet" href="css/gallery.css">
-<link rel="stylesheet" href="css/animation.css">
-<link rel="stylesheet" href="css/responsive.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+  <!-- Added Confetti JS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
 
-<!-- ================================= -->
-
-<div id="loader">
-
-<div class="loaderBox">
-
-<div class="moon"></div>
-
-<div class="stars"></div>
-
-<img
-src="cartoon/teddy.svg"
-class="loaderTeddy"
-alt="Teddy">
-
-<h1>
-
-Loading Your Surprise...
-
-</h1>
-
-<p>
-
-Preparing Love...
-
-</p>
-
-<div class="loadingLine">
-
-<div class="loadingFill"></div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ================================= -->
-
-<div id="galaxy"></div>
-
-<div id="clouds"></div>
-
-<div id="starsBg"></div>
-
-<div id="heartRain"></div>
-
-<div id="flowers"></div>
-
-<div id="butterflies"></div>
-
-<canvas id="fireworksCanvas"></canvas>
-
-<!-- ================================= -->
-
-<div class="cursor"></div>
-
-<div class="cursor2"></div>
-
-<!-- ================================= -->
-
-<header>
-
-<nav>
-
-<div class="logo">
-
-❤️ BirthdayVerse
-
-</div>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#story">Story</a></li>
-
-<li><a href="#gallery">Gallery</a></li>
-
-<li><a href="#letter">Letter</a></li>
-
-<li><a href="#cake">Cake</a></li>
-
-<li><a href="#gift">Gift</a></li>
-
-</ul>
-
-<div class="menu">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
-
-</nav>
-
-</header>
-
-<!-- ================================= -->
-
-<section
-class="hero"
-id="home">
-
-<div class="heroLeft">
-
-<h3>
-
-Happy Birthday
-
-</h3>
-
-<h1>
-
-<span id="wifeName">
-
-My Princess
-
-</span>
-
-❤️
-
-</h1>
-
-<p id="typingText">
-
-</p>
-
-<div class="heroButtons">
-
-<button id="startBtn">
-
-Open My Heart ❤️
-
-</button>
-
-<button id="galleryBtn">
-
-Our Memories 📸
-
-</button>
-
-</div>
-
-</div>
-
-<div class="heroRight">
-
-<div class="photoCircle">
-
-<img
-src="images/cover.jpg"
-id="coverPhoto"
-alt="Cover">
-
-<div class="photoGlow"></div>
-
-</div>
-
-<img
-src="cartoon/teddy.svg"
-class="heroTeddy"
-alt="Teddy">
-
-<img
-src="cartoon/bunny.svg"
-class="heroBunny"
-alt="Bunny">
-
-</div>
-
-</section>
-<!-- =====================================================
-     HERO FLOATING DECORATION
-====================================================== -->
-
-<div class="floatingCloud cloud1"></div>
-<div class="floatingCloud cloud2"></div>
-<div class="floatingCloud cloud3"></div>
-
-<div class="floatingStars">
-
-<span>⭐</span>
-<span>✨</span>
-<span>⭐</span>
-<span>✨</span>
-<span>⭐</span>
-
-</div>
-
-<div class="floatingButterfly">
-
-<img src="cartoon/butterfly.svg" alt="Butterfly">
-
-</div>
-
-<div class="floatingHeart">
-
-❤️ ❤️ ❤️
-
-</div>
-
-<div class="heroWave"></div>
-
-<!-- =====================================================
-     TEDDY SPEECH
-====================================================== -->
-
-<div class="teddySpeech">
-
-<div class="speechBubble">
-
-<h2>
-
-Happy Birthday
-Princess ❤️
-
-</h2>
-
-<p>
-
-I have a beautiful surprise
-for you today...
-
-</p>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     LOVE COUNTER
-====================================================== -->
-
-<section class="loveCounter">
-
-<div class="counterBox">
-
-<h2>
-
-We've Been Together
-
-</h2>
-
-<div class="counterGrid">
-
-<div>
-
-<h1 id="loveDays">
-
-000
-
-</h1>
-
-<p>Days</p>
-
-</div>
-
-<div>
-
-<h1 id="loveHours">
-
-00
-
-</h1>
-
-<p>Hours</p>
-
-</div>
-
-<div>
-
-<h1 id="loveMinutes">
-
-00</h1>
-
-<p>Minutes</p>
-
-</div>
-
-<div>
-
-<h1 id="loveSeconds">
-
-00</h1>
-
-<p>Seconds</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     LOVE STORY
-====================================================== -->
-
-<section id="story">
-
-<div class="title">
-
-<h1>
-
-Our Love Story ❤️
-
-</h1>
-
-<p>
-
-Every Picture Tells A Story...
-
-</p>
-
-</div>
-
-<div class="timeline">
-
-<div class="timelineCard left">
-
-<h2>
-
-🌸 First Meet
-
-</h2>
-
-<p>
-
-Write your first meeting story here.
-
-</p>
-
-</div>
-
-<div class="timelineCard right">
-
-<h2>
-
-💖 First Love
-
-</h2>
-
-<p>
-
-Write your first love memory.
-
-</p>
-
-</div>
-
-<div class="timelineCard left">
-
-<h2>
-
-🎂 First Birthday
-
-</h2>
-
-<p>
-
-Special Birthday Moment...
-
-</p>
-
-</div>
-
-<div class="timelineCard right">
-
-<h2>
-
-💍 Forever
-
-</h2>
-
-<p>
-
-Forever Together ❤️
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     TEDDY GIFT
-====================================================== -->
-
-<section class="teddyGift">
-
-<div class="giftLeft">
-
-<img
-
-src="cartoon/teddy.svg"
-
-class="giftTeddy"
-
-alt="">
-
-</div>
-
-<div class="giftRight">
-
-<h1>
-
-A Little Gift
-
-For My Princess 🎁
-
-</h1>
-
-<p>
-
-Click below to see
-your surprise...
-
-</p>
-
-<button id="giftButton">
-
-Open Gift 🎁
-
-</button>
-
-</div>
-
-</section>
-<!-- =====================================================
-     PREMIUM POLAROID GALLERY
-====================================================== -->
-
-<section id="gallery">
-
-<div class="sectionTitle">
-
-<h1>
-
-📸 Our Beautiful Memories
-
-</h1>
-
-<p>
-
-Every photo is a beautiful memory ❤️
-
-</p>
-
-</div>
-
-<div class="polaroidGallery">
-
-<div class="polaroid">
-
-<img src="images/photo1.jpg" alt="">
-
-<h3>Our First Smile ❤️</h3>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/photo2.jpg" alt="">
-
-<h3>Beautiful Day 🌸</h3>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/photo3.jpg" alt="">
-
-<h3>Lovely Moment 💖</h3>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/photo4.jpg" alt="">
-
-<h3>Forever Together ✨</h3>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/photo5.jpg" alt="">
-
-<h3>Sweet Memory 🥰</h3>
-
-</div>
-
-<div class="polaroid">
-
-<img src="images/photo6.jpg" alt="">
-
-<h3>You & Me ❤️</h3>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     3D PHOTO ALBUM
-====================================================== -->
-
-<section id="album">
-
-<div class="sectionTitle">
-
-<h1>
-
-📖 Memory Album
-
-</h1>
-
-</div>
-
-<div class="albumContainer">
-
-<div class="albumPage">
-
-<img src="images/photo7.jpg">
-
-<p>
-
-Our First Adventure ❤️
-
-</p>
-
-</div>
-
-<div class="albumPage">
-
-<img src="images/photo8.jpg">
-
-<p>
-
-Cute Together 🥰
-
-</p>
-
-</div>
-
-<div class="albumPage">
-
-<img src="images/photo9.jpg">
-
-<p>
-
-Always Mine 💕
-
-</p>
-
-</div>
-
-<div class="albumPage">
-
-<img src="images/photo10.jpg">
-
-<p>
-
-Forever Love ❤️
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     LOVE LETTER
-====================================================== -->
-
-<section id="letter">
-
-<div class="sectionTitle">
-
-<h1>
-
-💌 A Letter For You
-
-</h1>
-
-</div>
-
-<div class="letterBox">
-
-<div class="letterCover">
-
-💖
-
-Click To Open
-
-</div>
-
-<div class="letterPaper">
-
-<h2>
-
-My Princess ❤️
-
-</h2>
-
-<p id="letterText">
-
-Happy Birthday to the most precious person in my life...
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     SPOTIFY STYLE MUSIC PLAYER
-====================================================== -->
-
-<section id="musicPlayer">
-
-<div class="musicCard">
-
-<div class="musicLeft">
-
-<img src="images/cover.jpg" alt="Album Cover">
-
-</div>
-
-<div class="musicRight">
-
-<h2>
-
-Perfect ❤️
-
-</h2>
-
-<p>
-
-Your Favorite Song
-
-</p>
-
-<div class="musicButtons">
-
-<button id="prevSong">
-
-<i class="fa-solid fa-backward"></i>
-
-</button>
-
-<button id="playSong">
-
-<i class="fa-solid fa-play"></i>
-
-</button>
-
-<button id="nextSong">
-
-<i class="fa-solid fa-forward"></i>
-
-</button>
-
-</div>
-
-<input
-
-type="range"
-
-id="musicProgress"
-
-value="0">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     ROSE GARDEN
-====================================================== -->
-
-<section id="roseGarden">
-
-<h1>
-
-🌹 Roses For You 🌹
-
-</h1>
-
-<div class="roseContainer">
-
-<span>🌹</span>
-
-<span>🌹</span>
-
-<span>🌹</span>
-
-<span>🌹</span>
-
-<span>🌹</span>
-
-<span>🌹</span>
-
-<span>🌹</span>
-
-<span>🌹</span>
-
-</div>
-
-</section>
-<!-- =====================================================
-     3D BIRTHDAY CAKE
-====================================================== -->
-
-<section id="cake">
-
-<div class="sectionTitle">
-
-<h1>
-
-🎂 Make A Birthday Wish
-
-</h1>
-
-<p>
-
-Close your eyes, make a wish, and blow out the candle ❤️
-
-</p>
-
-</div>
-
-<div class="cakeScene">
-
-<div class="cake3D">
-
-<div class="cakeLayer layer1"></div>
-
-<div class="cakeLayer layer2"></div>
-
-<div class="cakeLayer layer3"></div>
-
-<div class="cakeCream"></div>
-
-<div class="candle">
-
-<div class="flame" id="flame"></div>
-
-</div>
-
-</div>
-
-<div class="cakeButtons">
-
-<button id="blowCandle">
-
-🕯 Blow Candle
-
-</button>
-
-<button id="cutCake">
-
-🎂 Cut Cake
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     SURPRISE GIFT
-====================================================== -->
-
-<section id="gift">
-
-<div class="sectionTitle">
-
-<h1>
-
-🎁 A Special Surprise
-
-</h1>
-
-</div>
-
-<div class="giftWrapper">
-
-<div id="giftBox">
-
-<div class="giftTop"></div>
-
-<div class="giftBody"></div>
-
-<div class="giftRibbonV"></div>
-
-<div class="giftRibbonH"></div>
-
-</div>
-
-<div id="giftMessage">
-
-<h2>
-
-💖 Happy Birthday My Princess 💖
-
-</h2>
-
-<p>
-
-You are the most beautiful chapter of my life.
-
-May Allah always keep you smiling.
-
-Thank you for making my world beautiful.
-
-I Love You Forever ❤️
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     TEDDY CELEBRATION
-====================================================== -->
-
-<section id="teddyParty">
-
-<div class="partyTitle">
-
-<h1>
-
-🧸 Teddy's Birthday Party
-
-</h1>
-
-</div>
-
-<div class="teddyFriends">
-
-<img src="cartoon/teddy.svg" class="partyTeddy">
-
-<img src="cartoon/bunny.svg" class="partyBunny">
-
-<img src="cartoon/panda.svg" class="partyPanda">
-
-<img src="cartoon/cat.svg" class="partyCat">
-
-</div>
-
-<div class="partyButtons">
-
-<button id="danceBtn">
-
-💃 Dance
-
-</button>
-
-<button id="hugBtn">
-
-🤗 Hug
-
-</button>
-
-<button id="flowersBtn">
-
-🌹 Flowers
-
-</button>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     PROPOSAL SECTION
-====================================================== -->
-
-<section id="proposal">
-
-<div class="proposalBox">
-
-<h1>
-
-💍 Forever With You
-
-</h1>
-
-<p>
-
-No matter where life takes us,
-
-I promise to hold your hand forever.
-
-Will you always stay with me?
-
-❤️
-
-</p>
-
-<div class="proposalButtons">
-
-<button id="yesBtn">
-
-Yes ❤️
-
-</button>
-
-<button id="alwaysBtn">
-
-Forever ♾️
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     CELEBRATION OVERLAY
-====================================================== -->
-
-<div id="celebrationOverlay">
-
-<h1>
-
-🎉 HAPPY BIRTHDAY 🎉
-
-</h1>
-
-<h2 id="celebrateName">
-
-My Princess ❤️
-
-</h2>
-
-<p>
-
-May every dream of yours come true.
-
-Stay happy forever.
-
-Love You ❤️
-
-</p>
-
-<button id="celebrateBtn">
-
-Celebrate 🎆
-
-</button>
-
-</div>
-
-<!-- =====================================================
-     FLOATING CONTROLS
-====================================================== -->
-
-<div id="floatingControls">
-
-<button id="musicBtn">
-
-<i class="fa-solid fa-music"></i>
-
-</button>
-
-<button id="themeBtn">
-
-🌙
-
-</button>
-
-<button id="shareBtn">
-
-🔗
-
-</button>
-
-<button id="topBtn">
-
-⬆
-
-</button>
-
-</div>
-
-<audio id="bgMusic" loop>
-
-<source src="music/birthday.mp3" type="audio/mpeg">
-
-</audio>
-<!-- =====================================================
-     SETTINGS PANEL
-====================================================== -->
-
-<div id="settingsPanel">
-
-<h2>
-
-⚙️ Settings
-
-</h2>
-
-<div class="settingItem">
-
-<label>
-
-🎵 Background Music
-
-</label>
-
-<button id="toggleMusic">
-
-ON
-
-</button>
-
-</div>
-
-<div class="settingItem">
-
-<label>
-
-🌙 Dark Theme
-
-</label>
-
-<button id="toggleTheme">
-
-Dark
-
-</button>
-
-</div>
-
-<div class="settingItem">
-
-<label>
-
-🌸 Sakura Effect
-
-</label>
-
-<button id="toggleFlowers">
-
-ON
-
-</button>
-
-</div>
-
-<div class="settingItem">
-
-<label>
-
-❤️ Heart Rain
-
-</label>
-
-<button id="toggleHearts">
-
-ON
-
-</button>
-
-</div>
-
-<div class="settingItem">
-
-<label>
-
-🎆 Fireworks
-
-</label>
-
-<button id="toggleFireworks">
-
-AUTO
-
-</button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     FULLSCREEN PHOTO VIEWER
-====================================================== -->
-
-<div id="photoViewer">
-
-<span id="closeViewer">
-
-&times;
-
-</span>
-
-<img
-
-id="viewerImage"
-
-src=""
-
-alt="">
-
-<div class="viewerButtons">
-
-<button id="prevPhoto">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-</button>
-
-<button id="nextPhoto">
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     LOVE MESSAGE
-====================================================== -->
-
-<section id="finalLove">
-
-<div class="loveBox">
-
-<h1>
-
-❤️ Thank You ❤️
-
-</h1>
-
-<p>
-
-Thank you for being part of my life.
-
-Every smile of yours makes my world brighter.
-
-May Allah bless you with happiness,
-
-good health and endless love.
-
-I will always stand beside you,
-
-today,
-
-tomorrow,
-
-and forever.
-
-💖
-
-</p>
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     FOOTER
-====================================================== -->
-
-<footer>
-
-<div class="footerContent">
-
-<h2>
-
-Forever With Love ❤️
-
-</h2>
-
-<p>
-
-Made Especially For
-
-<span id="wifeFooter">
-
-My Princess
-
-</span>
-
-</p>
-
-<p>
-
-Designed & Developed By
-
-<strong>
-
-Ifat Islam Imon
-
-</strong>
-
-</p>
-
-<div class="footerIcons">
-
-<i class="fa-solid fa-heart"></i>
-
-<i class="fa-solid fa-gift"></i>
-
-<i class="fa-solid fa-cake-candles"></i>
-
-<i class="fa-solid fa-star"></i>
-
-<i class="fa-solid fa-music"></i>
-
-</div>
-
-</div>
-
-</footer>
-
-<!-- =====================================================
-     JAVASCRIPT FILES
-====================================================== -->
-
-<script src="config.js"></script>
-
-<script src="js/app.js"></script>
-
-<script src="js/gallery.js"></script>
-
-<script src="js/music.js"></script>
-
-<script src="js/fireworks.js"></script>
-
-<script src="js/teddy.js"></script>
-
-<script src="js/hero.js"></script>
-
-<script src="js/effects.js"></script>
-
+  <div id="loader">
+    <div class="loaderBox">
+      <div class="moon"></div>
+      <div class="stars"></div>
+      <img src="cartoon/teddy.svg" class="loaderTeddy" alt="Teddy">
+      <h1>Loading Your Surprise...</h1>
+      <p>Preparing Love...</p>
+      <div class="loadingLine">
+        <div class="loadingFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="galaxy"></div>
+  <div id="clouds"></div>
+  <div id="starsBg"></div>
+  <div id="heartRain"></div>
+  <div id="flowers"></div>
+  <div id="butterflies"></div>
+
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+
+  <header>
+    <nav>
+      <div class="logo">❤️ BirthdayVerse</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#letter">Letter</a></li>
+        <li><a href="#cake">Cake</a></li>
+        <li><a href="#gift">Gift</a></li>
+      </ul>
+      <div class="menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="heroLeft">
+      <h3>Happy Birthday</h3>
+      <h1><span id="wifeName">My Princess</span> ❤️</h1>
+      <p id="typingText"></p>
+      <div class="heroButtons">
+        <button id="startBtn">Open My Heart ❤️</button>
+        <button id="galleryBtn">Our Memories 📸</button>
+      </div>
+    </div>
+
+    <div class="heroRight">
+      <div class="photoCircle">
+        <img src="images/cover.jpg" id="coverPhoto" alt="Cover">
+        <div class="photoGlow"></div>
+      </div>
+      <img src="cartoon/teddy.svg" class="heroTeddy" alt="Teddy">
+      <img src="cartoon/bunny.svg" class="heroBunny" alt="Bunny">
+    </div>
+  </section>
+
+  <div class="floatingCloud cloud1"></div>
+  <div class="floatingCloud cloud2"></div>
+  <div class="floatingCloud cloud3"></div>
+
+  <section class="loveCounter">
+    <div class="counterBox">
+      <h2>We've Been Together</h2>
+      <div class="counterGrid">
+        <div><h1 id="loveDays">000</h1><p>Days</p></div>
+        <div><h1 id="loveHours">00</h1><p>Hours</p></div>
+        <div><h1 id="loveMinutes">00</h1><p>Minutes</p></div>
+        <div><h1 id="loveSeconds">00</h1><p>Seconds</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="title">
+      <h1>Our Love Story ❤️</h1>
+      <p>Every Picture Tells A Story...</p>
+    </div>
+    <div class="timeline">
+      <div class="timelineCard left">
+        <h2>🌸 First Meet</h2>
+        <p>Write your first meeting story here.</p>
+      </div>
+      <div class="timelineCard right">
+        <h2>💖 First Love</h2>
+        <p>Write your first love memory.</p>
+      </div>
+      <div class="timelineCard left">
+        <h2>🎂 First Birthday</h2>
+        <p>Special Birthday Moment...</p>
+      </div>
+      <div class="timelineCard right">
+        <h2>💍 Forever</h2>
+        <p>Forever Together ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="sectionTitle">
+      <h1>📸 Our Beautiful Memories</h1>
+      <p>Every photo is a beautiful memory ❤️</p>
+    </div>
+    <div class="polaroidGallery">
+      <div class="polaroid"><img src="images/photo1.jpg" alt=""><h3>Our First Smile ❤️</h3></div>
+      <div class="polaroid"><img src="images/photo2.jpg" alt=""><h3>Beautiful Day 🌸</h3></div>
+      <div class="polaroid"><img src="images/photo3.jpg" alt=""><h3>Lovely Moment 💖</h3></div>
+      <div class="polaroid"><img src="images/photo4.jpg" alt=""><h3>Forever Together ✨</h3></div>
+      <div class="polaroid"><img src="images/photo5.jpg" alt=""><h3>Sweet Memory 🥰</h3></div>
+      <div class="polaroid"><img src="images/photo6.jpg" alt=""><h3>You & Me ❤️</h3></div>
+    </div>
+  </section>
+
+  <section id="letter">
+    <div class="sectionTitle">
+      <h1>💌 A Letter For You</h1>
+    </div>
+    <div class="letterBox">
+      <div class="letterCover">💖 Click To Open</div>
+      <div class="letterPaper">
+        <h2>My Princess ❤️</h2>
+        <p id="letterText">Happy Birthday to the most precious person in my life...</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cake">
+    <div class="sectionTitle">
+      <h1>🎂 Make A Birthday Wish</h1>
+      <p>Close your eyes, make a wish, and blow out the candle ❤️</p>
+    </div>
+    <div class="cakeScene">
+      <div class="cake3D">
+        <div class="cakeLayer layer1"></div>
+        <div class="cakeLayer layer2"></div>
+        <div class="cakeLayer layer3"></div>
+        <div class="cakeCream"></div>
+        <div class="candle"><div class="flame" id="flame"></div></div>
+      </div>
+      <div class="cakeButtons">
+        <button id="blowCandle">🕯 Blow Candle</button>
+        <button id="cutCake">🎂 Cut Cake</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gift">
+    <div class="sectionTitle">
+      <h1>🎁 A Special Surprise</h1>
+    </div>
+    <div class="giftWrapper">
+      <div id="giftBox">
+        <div class="giftTop"></div>
+        <div class="giftBody"></div>
+        <div class="giftRibbonV"></div>
+        <div class="giftRibbonH"></div>
+      </div>
+      <div id="giftMessage">
+        <h2>💖 Happy Birthday My Princess 💖</h2>
+        <p>You are the most beautiful chapter of my life. May Allah always keep you smiling. Love You Forever ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CELEBRATION OVERLAY -->
+  <div id="celebrationOverlay">
+    <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+    <h2 id="celebrateName">My Princess ❤️</h2>
+    <p>May every dream of yours come true. Stay happy forever. Love You ❤️</p>
+    <button id="celebrateBtn">Celebrate 🎆</button>
+  </div>
+
+  <div id="floatingControls">
+    <button id="musicBtn"><i class="fa-solid fa-music"></i></button>
+    <button id="themeBtn">🌙</button>
+    <button id="shareBtn">🔗</button>
+    <button id="topBtn">⬆</button>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="photoViewer">
+    <span id="closeViewer">&times;</span>
+    <img id="viewerImage" src="" alt="">
+    <div class="viewerButtons">
+      <button id="prevPhoto"><i class="fa-solid fa-arrow-left"></i></button>
+      <button id="nextPhoto"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footerContent">
+      <h2>Forever With Love ❤️</h2>
+      <p>Made Especially For <span id="wifeFooter">My Princess</span></p>
+      <p>Designed & Developed By <strong>Ifat Islam Imon</strong></p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

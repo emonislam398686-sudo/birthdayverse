@@ -162,14 +162,8 @@
     }
 
     @keyframes floatUp {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(-105vh) rotate(360deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
     }
 
     /* ================= 4. MAIN WEBSITE CONTENT ================= */
@@ -181,7 +175,6 @@
       z-index: 2;
     }
 
-    /* UPDATED HEADER WITH NAVIGATION LINKS */
     .header {
       position: sticky;
       top: 0;
@@ -203,7 +196,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      white-space: nowrap;
     }
 
     .nav-links {
@@ -267,7 +259,7 @@
       font-weight: 500;
     }
 
-    /* PRINCESS PHOTO OPTION (FIRST) */
+    /* PRINCESS PHOTO OPTION */
     .photo-upload-container {
       margin: 10px 0 25px 0;
       text-align: center;
@@ -303,7 +295,7 @@
       font-weight: 600;
     }
 
-    /* ACTION BUTTONS (BELOW PHOTO) */
+    /* ACTION BUTTONS */
     .action-buttons {
       display: flex;
       flex-direction: column;
@@ -345,10 +337,6 @@
       font-size: 18px;
       color: #d81b60;
       margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
     }
 
     .countdown-boxes {
@@ -366,46 +354,10 @@
       box-shadow: 0 4px 10px rgba(255, 64, 129, 0.2);
     }
 
-    .time-box span {
-      font-size: 20px;
-      font-weight: 700;
-      display: block;
-    }
+    .time-box span { font-size: 20px; font-weight: 700; display: block; }
+    .time-box label { font-size: 11px; text-transform: uppercase; font-weight: 500; opacity: 0.9; }
 
-    .time-box label {
-      font-size: 11px;
-      text-transform: uppercase;
-      font-weight: 500;
-      opacity: 0.9;
-    }
-
-    /* Floating Side Buttons */
-    .floating-bar {
-      position: fixed;
-      right: 20px;
-      bottom: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      z-index: 999;
-    }
-
-    .float-btn {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff4081, #d81b60);
-      color: white;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      box-shadow: 0 6px 16px rgba(216, 27, 96, 0.35);
-      cursor: pointer;
-    }
-
-    /* Feature Cards */
+    /* FEATURE CARDS GENERAL */
     .card {
       width: 100%;
       background: rgba(255, 255, 255, 0.85);
@@ -427,6 +379,204 @@
       line-height: 1.6;
     }
 
+    /* ================= 🎂 INTERACTIVE BIRTHDAY CAKE ================= */
+    .cake-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .cake-body {
+      width: 100px;
+      height: 60px;
+      background: #ff80ab;
+      border-radius: 10px 10px 0 0;
+      position: relative;
+      box-shadow: inset 0 8px 0 #ff4081, 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .cake-body::before {
+      content: '';
+      position: absolute;
+      top: 25px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: #ffffff;
+      opacity: 0.8;
+    }
+
+    .candle {
+      position: absolute;
+      top: 25px;
+      width: 8px;
+      height: 35px;
+      background: repeating-linear-gradient(45deg, #fff, #fff 5px, #ff5252 5px, #ff5252 10px);
+      border-radius: 3px;
+    }
+
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: -2px;
+      width: 12px;
+      height: 16px;
+      background: #ffeb3b;
+      border-radius: 50% 50% 20% 20%;
+      box-shadow: 0 0 10px #ff9800;
+      animation: flicker 0.6s infinite alternate;
+      transition: opacity 0.4s ease;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1) rotate(-2deg); }
+      100% { transform: scale(1.1) rotate(2deg); }
+    }
+
+    .candle.off .flame {
+      opacity: 0;
+      animation: none;
+    }
+
+    .cake-cut-line {
+      position: absolute;
+      top: 60px;
+      width: 0%;
+      height: 3px;
+      background: #d81b60;
+      transition: width 0.6s ease;
+    }
+
+    /* ================= 🎁 SURPRISE GIFT BOX ================= */
+    .gift-box-wrapper {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .gift-box {
+      font-size: 60px;
+      cursor: pointer;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .gift-message {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: #ffe4e8;
+      border-radius: 12px;
+      color: #d81b60;
+      font-weight: 600;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ================= 💌 LOVE LETTER MODAL ================= */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      padding: 20px;
+    }
+
+    .modal-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: popUp 0.3s ease;
+      position: relative;
+    }
+
+    @keyframes popUp {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 12px; right: 15px;
+      background: none; border: none;
+      font-size: 20px; color: #888;
+      cursor: pointer;
+    }
+
+    /* ================= 📸 PREMIUM GALLERY LIGHTBOX ================= */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .gallery-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .gallery-item h5 {
+      font-size: 12px;
+      color: #d81b60;
+      margin-top: 6px;
+    }
+
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+    }
+
+    .lightbox-overlay img {
+      max-width: 85%;
+      max-height: 80%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+    }
+
+    /* STORY BOXES */
     .story-box {
       background: #ffffff;
       padding: 12px 15px;
@@ -435,18 +585,12 @@
       border-left: 4px solid #ff4081;
     }
 
-    .story-box h4 {
-      color: #c2185b;
-      font-size: 14px;
-    }
-
-    .story-box p {
-      font-size: 13px;
-      color: #777;
-    }
+    .story-box h4 { color: #c2185b; font-size: 14px; }
+    .story-box p { font-size: 13px; color: #777; }
 
     .pill-btn-group {
       display: flex;
+      justify-content: center;
       gap: 10px;
       margin-top: 15px;
     }
@@ -462,22 +606,9 @@
       cursor: pointer;
     }
 
-    footer {
-      text-align: center;
-      margin-top: 20px;
-      padding: 20px;
-    }
-
-    footer h4 {
-      color: #d81b60;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    footer p {
-      font-size: 13px;
-      color: #666;
-    }
+    footer { text-align: center; margin-top: 20px; padding: 20px; }
+    footer h4 { color: #d81b60; font-size: 18px; margin-bottom: 4px; }
+    footer p { font-size: 13px; color: #666; }
   </style>
 </head>
 <body>
@@ -524,7 +655,7 @@
   <!-- MAIN WEBSITE CONTENT -->
   <div id="main-content">
 
-    <!-- NAVBAR HEADER WITH LINKS -->
+    <!-- NAVBAR HEADER -->
     <div class="header">
       <div class="header-logo">❤️ BirthdayVerse</div>
       <div class="nav-links">
@@ -556,56 +687,63 @@
 
         <!-- ACTION BUTTONS -->
         <div class="action-buttons">
-          <a href="#letter" class="btn-pink">Open My Heart ❤️</a>
+          <button class="btn-pink" onclick="openLoveLetter()">Open My Heart ❤️</button>
           <a href="#memories" class="btn-pink">Our Memories 📸</a>
         </div>
       </div>
 
-      <!-- WE ARE TOGETHER COUNTDOWN SECTION -->
+      <!-- COUNTDOWN SECTION -->
       <div class="countdown-card">
         <h3>👩‍❤️‍👨 We Are Together Since 💕</h3>
         <div class="countdown-boxes">
-          <div class="time-box">
-            <span id="days">0</span>
-            <label>Days</label>
-          </div>
-          <div class="time-box">
-            <span id="hours">0</span>
-            <label>Hours</label>
-          </div>
-          <div class="time-box">
-            <span id="minutes">0</span>
-            <label>Mins</label>
-          </div>
-          <div class="time-box">
-            <span id="seconds">0</span>
-            <label>Secs</label>
-          </div>
+          <div class="time-box"><span id="days">0</span><label>Days</label></div>
+          <div class="time-box"><span id="hours">0</span><label>Hours</label></div>
+          <div class="time-box"><span id="minutes">0</span><label>Mins</label></div>
+          <div class="time-box"><span id="seconds">0</span><label>Secs</label></div>
         </div>
       </div>
 
-      <!-- A LETTER FOR YOU -->
-      <div class="card" id="letter">
-        <h3>💌 A Letter For You</h3>
-        <p style="color: #ff4081; font-weight: 600;">💖 Click To Open</p>
-        <p style="margin-top: 8px;"><b>My Princess ❤️</b><br>Happy Birthday to the most precious person in my life...</p>
-      </div>
+      <!-- 🎂 FEATURE 1: INTERACTIVE BIRTHDAY CAKE -->
+      <div class="card" style="text-align: center;">
+        <h3>🎂 Interactive Birthday Cake</h3>
+        <p>Blow out the candle and make a birthday wish ❤️</p>
+        
+        <div class="cake-container">
+          <div class="candle" id="candle">
+            <div class="flame" id="flame"></div>
+          </div>
+          <div class="cake-body">
+            <div class="cake-cut-line" id="cutLine"></div>
+          </div>
+        </div>
 
-      <!-- MAKE A BIRTHDAY WISH -->
-      <div class="card">
-        <h3>🎂 Make A Birthday Wish</h3>
-        <p>Close your eyes, make a wish, and blow out the candle ❤️</p>
         <div class="pill-btn-group">
-          <button class="pill-btn" onclick="alert('Candle blown! 🕯️✨')">🕯️ Blow Candle</button>
-          <button class="pill-btn" onclick="alert('Cake cut! 🎂🎉')">🎂 Cut Cake</button>
+          <button class="pill-btn" onclick="blowCandle()">🕯️ Blow Candle</button>
+          <button class="pill-btn" onclick="cutCake()">🎂 Cut Cake</button>
         </div>
       </div>
 
-      <!-- A SPECIAL SURPRISE -->
-      <div class="card">
-        <h3>🎁 A Special Surprise</h3>
-        <p style="color: #d81b60; font-weight: 700; font-size: 15px;">💕 Happy Birthday My Princess 💕</p>
-        <p style="margin-top: 5px;">You are the most beautiful chapter of my life. May Allah always keep you smiling. Love You Forever ❤️</p>
+      <!-- 🎁 FEATURE 2: SURPRISE GIFT BOX -->
+      <div class="card" style="text-align: center;">
+        <h3>🎁 Surprise Gift Box</h3>
+        <p>Tap on the gift box to reveal your surprise! ✨</p>
+        
+        <div class="gift-box-wrapper">
+          <div class="gift-box" onclick="openGift()">🎁</div>
+          <div class="gift-message" id="giftMsg">
+            💖 You get unlimited love, endless hugs, and my lifelong commitment to make you smile! Happy Birthday Princess! 🎉
+          </div>
+        </div>
+      </div>
+
+      <!-- 💌 FEATURE 3: LOVE LETTER (POPUP CARD) -->
+      <div class="card" id="letter">
+        <h3>💌 A Special Love Letter</h3>
+        <p style="color: #ff4081; font-weight: 600;">💖 Click below to read my heart</p>
+        <p style="margin-top: 8px;"><b>My Dearest Princess ❤️</b></p>
+        <div style="margin-top: 12px; text-align: center;">
+          <button class="pill-btn" onclick="openLoveLetter()">📜 Read Full Letter</button>
+        </div>
       </div>
 
       <!-- OUR LOVE STORY -->
@@ -615,38 +753,44 @@
         
         <div class="story-box">
           <h4>🌸 First Meet</h4>
-          <p>Write your first meeting story here.</p>
+          <p>The day my life changed forever...</p>
         </div>
         <div class="story-box">
           <h4>💖 First Love</h4>
-          <p>Write your first love memory.</p>
+          <p>When I realized you are the one for me.</p>
         </div>
         <div class="story-box">
-          <h4>🎂 First Birthday</h4>
-          <p>Special Birthday Moment...</p>
+          <h4>🎂 First Birthday Together</h4>
+          <p>A precious memory cherished forever.</p>
         </div>
         <div class="story-box">
-          <h4>💍 Forever</h4>
-          <p>Forever Together ❤️</p>
+          <h4>💍 Forever & Always</h4>
+          <p>Hand in hand, forever together ❤️</p>
         </div>
       </div>
 
-      <!-- OUR BEAUTIFUL MEMORIES / GALLERY -->
+      <!-- 📸 FEATURE 4: PREMIUM PHOTO GALLERY (INTERACTIVE LIGHTBOX) -->
       <div class="card" id="memories">
         <h3>📸 Our Beautiful Memories</h3>
-        <p>Every photo is a beautiful memory ❤️</p>
+        <p>Click on any photo to view in full size ❤️</p>
 
-        <div class="story-box">
-          <h4>Our First Smile ❤️</h4>
-        </div>
-        <div class="story-box">
-          <h4>Beautiful Day 🌸</h4>
-        </div>
-        <div class="story-box">
-          <h4>Lovely Moment 💖</h4>
-        </div>
-        <div class="story-box">
-          <h4>Forever Together ✨</h4>
+        <div class="gallery-grid">
+          <div class="gallery-item" onclick="openLightbox('https://picsum.photos/400/400?random=1')">
+            <img src="https://picsum.photos/200/200?random=1" alt="Memory 1">
+            <h5>First Smile ❤️</h5>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('https://picsum.photos/400/400?random=2')">
+            <img src="https://picsum.photos/200/200?random=2" alt="Memory 2">
+            <h5>Beautiful Day 🌸</h5>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('https://picsum.photos/400/400?random=3')">
+            <img src="https://picsum.photos/200/200?random=3" alt="Memory 3">
+            <h5>Lovely Moment 💖</h5>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('https://picsum.photos/400/400?random=4')">
+            <img src="https://picsum.photos/200/200?random=4" alt="Memory 4">
+            <h5>Forever Together ✨</h5>
+          </div>
         </div>
       </div>
 
@@ -659,13 +803,24 @@
 
     </div>
 
-    <!-- FLOATING SIDE BUTTONS -->
-    <div class="floating-bar">
-      <button class="float-btn">🎵</button>
-      <button class="float-btn">🔗</button>
-      <button class="float-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-    </div>
+  </div>
 
+  <!-- LOVE LETTER MODAL -->
+  <div class="modal-overlay" id="letterModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeLoveLetter()">✖</button>
+      <h3 style="color: #d81b60; margin-bottom: 10px;">💌 My Dearest Princess</h3>
+      <p style="font-size: 14px; color: #444; line-height: 1.6; text-align: left;">
+        Happy Birthday to the girl who fills my life with infinite joy and love! 🌸<br><br>
+        Having you by my side is the greatest gift I could ever ask for. Every moment spent with you is a cherished memory. May your day be as beautiful, sweet, and extraordinary as you are.<br><br>
+        I love you endlessly ❤️
+      </p>
+    </div>
+  </div>
+
+  <!-- GALLERY LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Enlarged Memory">
   </div>
 
   <script>
@@ -678,7 +833,6 @@
     const loadingInterval1 = setInterval(() => {
       progress1 += 5;
       progressBar1.style.width = progress1 + '%';
-
       if (progress1 >= 100) {
         clearInterval(loadingInterval1);
         setTimeout(() => {
@@ -691,7 +845,7 @@
       }
     }, 100);
 
-    // 2. CELEBRATE CLICK -> SECOND LOADING -> MAIN CONTENT
+    // 2. SECOND LOADING SCREEN
     function triggerSecondLoading() {
       welcomeScreen.style.display = 'none';
       const secondLoading = document.getElementById('second-loading-screen');
@@ -699,12 +853,10 @@
       const mainContent = document.getElementById('main-content');
 
       secondLoading.style.display = 'flex';
-
       let progress2 = 0;
       const loadingInterval2 = setInterval(() => {
         progress2 += 5;
         progressBar2.style.width = progress2 + '%';
-
         if (progress2 >= 100) {
           clearInterval(loadingInterval2);
           setTimeout(() => {
@@ -718,7 +870,7 @@
       }, 80);
     }
 
-    // 3. IMAGE PREVIEW FUNCTION
+    // 3. PRINCESS PHOTO UPLOAD
     function loadPhoto(event) {
       const reader = new FileReader();
       reader.onload = function(){
@@ -730,27 +882,54 @@
       reader.readAsDataURL(event.target.files[0]);
     }
 
-    // 4. WE ARE TOGETHER COUNTDOWN TIMER
+    // 4. WE ARE TOGETHER COUNTDOWN
     const startDate = new Date(2023, 0, 1); 
-
     function updateCountdown() {
       const now = new Date();
       const diff = now - startDate;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / 1000 / 60) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById('days').innerText = days;
-      document.getElementById('hours').innerText = hours;
-      document.getElementById('minutes').innerText = minutes;
-      document.getElementById('seconds').innerText = seconds;
+      document.getElementById('days').innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById('hours').innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById('minutes').innerText = Math.floor((diff / 1000 / 60) % 60);
+      document.getElementById('seconds').innerText = Math.floor((diff / 1000) % 60);
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 5. FLOATING EMOJIS GENERATOR
+    // 5. CAKE INTERACTIONS
+    function blowCandle() {
+      document.getElementById('candle').classList.add('off');
+      alert('🕯️ Candle blown out! Make a wish! ✨');
+    }
+
+    function cutCake() {
+      document.getElementById('cutLine').style.width = '100%';
+      setTimeout(() => alert('🎂 Cake cut successfully! Celebrating time! 🎉'), 400);
+    }
+
+    // 6. GIFT BOX INTERACTION
+    function openGift() {
+      const msg = document.getElementById('giftMsg');
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // 7. LOVE LETTER MODAL
+    function openLoveLetter() {
+      document.getElementById('letterModal').style.display = 'flex';
+    }
+    function closeLoveLetter() {
+      document.getElementById('letterModal').style.display = 'none';
+    }
+
+    // 8. GALLERY LIGHTBOX
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // 9. FLOATING EMOJIS
     const emojis = ['🎈', '❤️', '✨', '🎉', '🎂', '💖', '🌸'];
     function createEmoji() {
       const emoji = document.createElement('div');
@@ -759,14 +938,9 @@
       emoji.style.left = Math.random() * 90 + 'vw';
       emoji.style.animationDuration = (Math.random() * 3 + 4) + 's';
       emoji.style.fontSize = (Math.random() * 15 + 20) + 'px';
-
       document.body.appendChild(emoji);
-
-      setTimeout(() => {
-        emoji.remove();
-      }, 6000);
+      setTimeout(() => emoji.remove(), 6000);
     }
-
     setInterval(createEmoji, 400);
   </script>
 

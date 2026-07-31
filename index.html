@@ -287,10 +287,10 @@
     }
 
     .photo-frame {
-      width: 140px; /* ফ্রেমের সাইজ বাড়ানো হয়েছে */
-      height: 140px; /* ফ্রেমের সাইজ বাড়ানো হয়েছে */
+      width: 140px;
+      height: 140px;
       margin: 0 auto;
-      border-radius: 20px; /* কার্ডের শেপে সুন্দর করার জন্য */
+      border-radius: 20px;
       border: 3px dashed #ff4081;
       display: flex;
       justify-content: center;
@@ -304,7 +304,7 @@
     .photo-frame img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* ছবি না কাটার জন্য contain করা হলো */
+      object-fit: contain;
       background: #fff;
     }
 
@@ -555,7 +555,6 @@
     }
     .gallery-item:hover { transform: translateY(-4px); }
     
-    /* UPDATED: GALLERY IMAGE CONTAIN */
     .gallery-item img { 
       width: 100%; 
       height: 130px; 
@@ -611,19 +610,18 @@
       <div class="progress-bar" id="progress-bar-1"></div>
     </div>
   </div>
-<!-- 🎵 BACKGROUND MUSIC -->
+
+  <!-- 🎵 BACKGROUND MUSIC -->
   <audio id="bgMusic" loop preload="auto">
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a7315b.mp3?filename=happy-birthday-155461.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- 1st LOADING SCREEN -->
-  <div id="loading-screen" class="loading-screen">
   <!-- WELCOME / CELEBRATE SCREEN -->
   <div id="welcome-screen">
     <div class="welcome-cursive">🎉 HAPPY BIRTHDAY 🎉</div>
     <div class="welcome-sub">My Princess ❤️</div>
     <div class="welcome-msg">May every dream of yours come true. Stay happy forever!</div>
-    <button class="celebrate-btn" onclick="triggerSecondLoading()">Celebrate 🎆</button>
+    <button id="celebrateBtn" class="celebrate-btn" onclick="triggerSecondLoading()">Celebrate 🎆</button>
   </div>
 
   <!-- 2nd LOADING SCREEN -->
@@ -666,11 +664,11 @@
         </div>
 
         <!-- PRINCESS PHOTO -->
-<div class="photo-upload-container">
-  <div class="photo-frame" style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto;">
-    <img src="5D35A340-1722-4FEC-A38E-CF09CB0D1A5B.jpeg" alt="My Princess" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-</div>
+        <div class="photo-upload-container">
+          <div class="photo-frame" style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto;">
+            <img src="5D35A340-1722-4FEC-A38E-CF09CB0D1A5B.jpeg" alt="My Princess" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
 
         <!-- ACTION BUTTONS -->
         <div class="action-buttons">
@@ -990,29 +988,24 @@
     }
 
     // 9. GALLERY LIGHTBOX
-    function openLightbox(src) {
-      document.getElementById('lightboxImg').src = src;
+    function openLightbox(imgSrc) {
+      document.getElementById('lightboxImg').src = imgSrc;
       document.getElementById('lightbox').style.display = 'flex';
     }
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
     }
 
-    // 10. BACKGROUND FLOATING EMOJIS
-    const emojis = ['🎈', '❤️', '✨', '🎉', '🎂', '💖', '🌸'];
-    function createEmoji() {
-      const emoji = document.createElement('div');
-      emoji.classList.add('emoji-float');
-      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-      emoji.style.left = Math.random() * 90 + 'vw';
-      emoji.style.animationDuration = (Math.random() * 3 + 4) + 's';
-      emoji.style.fontSize = (Math.random() * 15 + 20) + 'px';
-      document.body.appendChild(emoji);
-      setTimeout(() => emoji.remove(), 6000);
+    // 10. BACKGROUND MUSIC PLAY ON CELEBRATION
+    const celebrateButton = document.getElementById("celebrateBtn");
+    if (celebrateButton) {
+      celebrateButton.addEventListener("click", () => {
+        const music = document.getElementById("bgMusic");
+        if (music) {
+          music.play().catch((error) => console.log("Audio play blocked by browser:", error));
+        }
+      });
     }
-
-    // Trigger floating emojis every 800ms
-    setInterval(createEmoji, 800);
   </script>
 </body>
 </html>

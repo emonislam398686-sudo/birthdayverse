@@ -27,8 +27,8 @@
       position: relative;
     }
 
-    /* ================= 1. LOADING SCREEN ================= */
-    #loading-screen {
+    /* ================= 1. LOADING SCREENS ================= */
+    .loading-screen {
       position: fixed;
       top: 0;
       left: 0;
@@ -43,11 +43,10 @@
       transition: opacity 0.6s ease;
     }
 
-    /* Cute SVG Heart Animation */
     .cute-svg-container {
-      width: 90px;
-      height: 90px;
-      margin-bottom: 25px;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
       animation: pulse 1.5s infinite ease-in-out;
     }
 
@@ -58,7 +57,7 @@
     }
 
     .loading-title {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 700;
       color: #d81b60;
       margin-bottom: 6px;
@@ -66,13 +65,13 @@
     }
 
     .loading-sub {
-      font-size: 16px;
+      font-size: 15px;
       color: #4a4a4a;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .progress-bar-container {
-      width: 260px;
+      width: 250px;
       height: 8px;
       background: rgba(255, 255, 255, 0.6);
       border-radius: 10px;
@@ -209,13 +208,13 @@
 
     .hero-section {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 15px;
       margin-bottom: 20px;
       width: 100%;
     }
 
     .hero-h2 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 700;
       color: #c2185b;
       margin-bottom: 2px;
@@ -223,9 +222,9 @@
 
     .hero-cursive {
       font-family: 'Great Vibes', cursive;
-      font-size: 58px;
+      font-size: 54px;
       color: #e91e63;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -233,21 +232,58 @@
     }
 
     .hero-msg {
-      font-size: 16px;
+      font-size: 15px;
       color: #4a4a4a;
       line-height: 1.6;
       max-width: 330px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 20px auto;
       font-weight: 500;
     }
 
+    /* PRINCESS PHOTO OPTION (FIRST) */
+    .photo-upload-container {
+      margin: 10px 0 25px 0;
+      text-align: center;
+    }
+
+    .photo-frame {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px dashed #ff4081;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(255, 105, 180, 0.2);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .photo-placeholder-text {
+      font-size: 12px;
+      color: #d81b60;
+      text-align: center;
+      padding: 10px;
+      font-weight: 600;
+    }
+
+    /* ACTION BUTTONS (BELOW PHOTO) */
     .action-buttons {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 14px;
       align-items: center;
       width: 100%;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .btn-pink {
@@ -266,39 +302,54 @@
       text-align: center;
     }
 
-    .photo-upload-container {
-      margin: 10px 0 25px 0;
-      text-align: center;
-    }
-
-    .photo-frame {
-      width: 130px;
-      height: 130px;
-      margin: 0 auto;
-      border-radius: 50%;
-      border: 3px dashed #ff4081;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.7);
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    .photo-frame img {
+    /* ================= COUNTDOWN SECTION ================= */
+    .countdown-card {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(255, 182, 193, 0.3);
+      border: 1px solid #ffb6c1;
     }
 
-    .photo-placeholder-text {
-      font-size: 12px;
+    .countdown-card h3 {
+      font-size: 18px;
       color: #d81b60;
-      text-align: center;
-      padding: 10px;
-      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .countdown-boxes {
+      display: flex;
+      justify-content: space-around;
+      gap: 8px;
+    }
+
+    .time-box {
+      background: linear-gradient(135deg, #ff80ab, #ff4081);
+      color: white;
+      padding: 10px 8px;
+      border-radius: 12px;
+      flex: 1;
+      box-shadow: 0 4px 10px rgba(255, 64, 129, 0.2);
+    }
+
+    .time-box span {
+      font-size: 20px;
+      font-weight: 700;
+      display: block;
+    }
+
+    .time-box label {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: 0.9;
     }
 
     /* Floating Side Buttons */
@@ -404,9 +455,8 @@
 </head>
 <body>
 
-  <!-- 1. LOADING SCREEN -->
-  <div id="loading-screen">
-    <!-- CUTE SVG HEART ANIMATION -->
+  <!-- 1st LOADING SCREEN -->
+  <div id="loading-screen" class="loading-screen">
     <div class="cute-svg-container">
       <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M50 88.25C50 88.25 15 62.5 15 35.5C15 22.25 25.5 12 38.5 12 C46 12 50 16.5 50 16.5 C50 16.5 54 12 61.5 12 C74.5 12 85 22.25 85 35.5 C85 62.5 50 88.25 50 88.25Z" fill="#FF4081" />
@@ -414,23 +464,37 @@
         <polygon points="50,5 53,12 60,12 55,16 57,23 50,19 43,23 45,16 40,12 47,12" fill="#FFEB3B" />
       </svg>
     </div>
-
     <div class="loading-title">Loading Your Surprise...</div>
     <div class="loading-sub">Preparing Love ❤️</div>
     <div class="progress-bar-container">
-      <div class="progress-bar" id="progress-bar"></div>
+      <div class="progress-bar" id="progress-bar-1"></div>
     </div>
   </div>
 
-  <!-- 2. WELCOME / CELEBRATE SCREEN -->
+  <!-- WELCOME / CELEBRATE SCREEN -->
   <div id="welcome-screen">
     <div class="welcome-cursive">🎉 HAPPY BIRTHDAY 🎉</div>
     <div class="welcome-sub">My Princess ❤️</div>
     <div class="welcome-msg">May every dream of yours come true. Stay happy forever!</div>
-    <button class="celebrate-btn" onclick="startCelebration()">Celebrate 🎆</button>
+    <button class="celebrate-btn" onclick="triggerSecondLoading()">Celebrate 🎆</button>
   </div>
 
-  <!-- 3. MAIN WEBSITE CONTENT -->
+  <!-- 2nd LOADING SCREEN (AFTER CLICKING CELEBRATE) -->
+  <div id="second-loading-screen" class="loading-screen" style="display: none;">
+    <div class="cute-svg-container">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 88.25C50 88.25 15 62.5 15 35.5C15 22.25 25.5 12 38.5 12 C46 12 50 16.5 50 16.5 C50 16.5 54 12 61.5 12 C74.5 12 85 22.25 85 35.5 C85 62.5 50 88.25 50 88.25Z" fill="#FF4081" />
+        <path d="M35 25 C30 25 26 29 26 34" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+      </svg>
+    </div>
+    <div class="loading-title">Opening Your World...</div>
+    <div class="loading-sub">Almost There Princess ✨</div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar-2"></div>
+    </div>
+  </div>
+
+  <!-- MAIN WEBSITE CONTENT -->
   <div id="main-content">
 
     <!-- NAVBAR HEADER -->
@@ -449,19 +513,42 @@
           Every heartbeat reminds me how lucky I am to have you. Happy Birthday My Princess ❤️
         </div>
 
-        <!-- ACTION BUTTONS -->
-        <div class="action-buttons">
-          <a href="#letter" class="btn-pink">Open My Heart ❤️</a>
-          <a href="#memories" class="btn-pink">Our Memories 📸</a>
-        </div>
-
-        <!-- PRINCESS PHOTO OPTION -->
+        <!-- 1. PRINCESS PHOTO OPTION (FIRST) -->
         <div class="photo-upload-container">
           <div class="photo-frame" onclick="document.getElementById('fileInput').click()">
             <span class="photo-placeholder-text">📷 Add Princess Photo</span>
             <img id="previewImg" src="" alt="Princess">
           </div>
           <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="loadPhoto(event)">
+        </div>
+
+        <!-- 2. ACTION BUTTONS (BELOW PHOTO) -->
+        <div class="action-buttons">
+          <a href="#letter" class="btn-pink">Open My Heart ❤️</a>
+          <a href="#memories" class="btn-pink">Our Memories 📸</a>
+        </div>
+      </div>
+
+      <!-- 3. WE ARE TOGETHER COUNTDOWN SECTION -->
+      <div class="countdown-card">
+        <h3>👩‍❤️‍👨 We Are Together Since 💕</h3>
+        <div class="countdown-boxes">
+          <div class="time-box">
+            <span id="days">0</span>
+            <label>Days</label>
+          </div>
+          <div class="time-box">
+            <span id="hours">0</span>
+            <label>Hours</label>
+          </div>
+          <div class="time-box">
+            <span id="minutes">0</span>
+            <label>Mins</label>
+          </div>
+          <div class="time-box">
+            <span id="seconds">0</span>
+            <label>Secs</label>
+          </div>
         </div>
       </div>
 
@@ -550,33 +637,53 @@
   </div>
 
   <script>
-    // 1. LOADING SCREEN TO WELCOME SCREEN
-    let progress = 0;
-    const progressBar = document.getElementById('progress-bar');
-    const loadingScreen = document.getElementById('loading-screen');
+    // 1. FIRST LOADING SCREEN LOGIC
+    let progress1 = 0;
+    const progressBar1 = document.getElementById('progress-bar-1');
+    const loadingScreen1 = document.getElementById('loading-screen');
     const welcomeScreen = document.getElementById('welcome-screen');
-    const mainContent = document.getElementById('main-content');
 
-    const loadingInterval = setInterval(() => {
-      progress += 5;
-      progressBar.style.width = progress + '%';
+    const loadingInterval1 = setInterval(() => {
+      progress1 += 5;
+      progressBar1.style.width = progress1 + '%';
 
-      if (progress >= 100) {
-        clearInterval(loadingInterval);
+      if (progress1 >= 100) {
+        clearInterval(loadingInterval1);
         setTimeout(() => {
-          loadingScreen.style.opacity = '0';
+          loadingScreen1.style.opacity = '0';
           setTimeout(() => {
-            loadingScreen.style.display = 'none';
+            loadingScreen1.style.display = 'none';
             welcomeScreen.style.display = 'flex';
           }, 600);
         }, 300);
       }
     }, 100);
 
-    // 2. CELEBRATE BUTTON CLICK TO MAIN LAYOUT
-    function startCelebration() {
+    // 2. CELEBRATE CLICK -> SECOND LOADING -> MAIN CONTENT
+    function triggerSecondLoading() {
       welcomeScreen.style.display = 'none';
-      mainContent.style.display = 'flex';
+      const secondLoading = document.getElementById('second-loading-screen');
+      const progressBar2 = document.getElementById('progress-bar-2');
+      const mainContent = document.getElementById('main-content');
+
+      secondLoading.style.display = 'flex';
+
+      let progress2 = 0;
+      const loadingInterval2 = setInterval(() => {
+        progress2 += 5;
+        progressBar2.style.width = progress2 + '%';
+
+        if (progress2 >= 100) {
+          clearInterval(loadingInterval2);
+          setTimeout(() => {
+            secondLoading.style.opacity = '0';
+            setTimeout(() => {
+              secondLoading.style.display = 'none';
+              mainContent.style.display = 'flex';
+            }, 600);
+          }, 300);
+        }
+      }, 80);
     }
 
     // 3. IMAGE PREVIEW FUNCTION
@@ -591,7 +698,29 @@
       reader.readAsDataURL(event.target.files[0]);
     }
 
-    // 4. FLOATING EMOJIS GENERATOR
+    // 4. WE ARE TOGETHER COUNTDOWN TIMER
+    // আপনার সম্পর্ক শুরুর তারিখ দিন (Year, Month Index 0-11, Day)
+    // উদাহরণ: ২০২৩ সালের জানুয়ারি ১ তারিখ হলে: new Date(2023, 0, 1)
+    const startDate = new Date(2023, 0, 1); 
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').innerText = days;
+      document.getElementById('hours').innerText = hours;
+      document.getElementById('minutes').innerText = minutes;
+      document.getElementById('seconds').innerText = seconds;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 5. FLOATING EMOJIS GENERATOR
     const emojis = ['🎈', '❤️', '✨', '🎉', '🎂', '💖', '🌸'];
     function createEmoji() {
       const emoji = document.createElement('div');

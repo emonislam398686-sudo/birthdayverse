@@ -130,3 +130,24 @@ nav ul li a{ color:white; text-decoration:none; }
   background:linear-gradient(45deg,#ff4fa2,#7b61ff);
   cursor: pointer;
 }
+/* READABILITY & BUTTON FIXES */
+.heroLeft p {
+  color: #222222 !important;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.heroButtons button {
+  color: #ffffff !important;
+  background: linear-gradient(45deg, #ff4fa2, #7b61ff) !important;
+  border: none !important;
+  font-weight: 600;
+}
+
+#floatingControls button {
+  background: linear-gradient(45deg, #ff4fa2, #7b61ff) !important;
+  color: #ffffff !important;
+  border: none !important;
+  cursor: pointer;
+  z-index: 100000;
+}

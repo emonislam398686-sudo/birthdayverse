@@ -235,3 +235,53 @@ function showToast(text) {
 }
 
 console.log("BirthdayVerse V3 Fixed and Running! ❤️");
+/* FLOATING BUTTONS FUNCTIONALITY */
+
+// 1. Top Button (উপরে যাওয়ার বাটন)
+const topBtn = document.getElementById("topBtn");
+if (topBtn) {
+  topBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+}
+
+// 2. Music Toggle Button (গান অন/অফ বাটন)
+const musicBtn = document.getElementById("musicBtn");
+if (musicBtn && bgMusic) {
+  musicBtn.onclick = () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      showToast("🎵 Music Playing");
+    } else {
+      bgMusic.pause();
+      showToast("🔇 Music Paused");
+    }
+  };
+}
+
+// 3. Share Button (লিংক কপি করার বাটন)
+const shareBtn = document.getElementById("shareBtn");
+if (shareBtn) {
+  shareBtn.onclick = () => {
+    navigator.clipboard.writeText(window.location.href);
+    showToast("🔗 Link Copied to Clipboard!");
+  };
+}
+
+// 4. Open My Heart Button Scroll
+const startBtn = document.getElementById("startBtn");
+if (startBtn) {
+  startBtn.onclick = () => {
+    const storySection = document.getElementById("story");
+    if (storySection) storySection.scrollIntoView({ behavior: "smooth" });
+  };
+}
+
+// 5. Our Memories Button Scroll
+const galleryBtn = document.getElementById("galleryBtn");
+if (galleryBtn) {
+  galleryBtn.onclick = () => {
+    const gallerySection = document.getElementById("gallery");
+    if (gallerySection) gallerySection.scrollIntoView({ behavior: "smooth" });
+  };
+}

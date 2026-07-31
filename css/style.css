@@ -1,6 +1,8 @@
 /* ===================================================
-      BirthdayVerse V3 - Pink Romantic Theme
+   BirthdayVerse V3 - Pink Romantic Theme & Floating Love
 =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
   margin:0;
@@ -9,198 +11,221 @@
   scroll-behavior:smooth;
 }
 
-body{
-  font-family:"Poppins",sans-serif;
-  background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%) !important;
+body {
+  font-family: "Poppins", sans-serif !important;
+  background: linear-gradient(135deg, #ffeef2 0%, #ffd1dc 50%, #ffb6c1 100%) !important;
   color: #4a2c3d !important;
-  overflow-x:hidden;
+  overflow-x: hidden;
   min-height: 100vh;
 }
 
-#loader{
-  position:fixed;
-  inset:0;
+/* LOADER SCREEN */
+#loader {
+  position: fixed;
+  inset: 0;
   background: linear-gradient(135deg, #ffc3a0 0%, #ffafbd 100%);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
 }
 
-.loaderBox{ text-align:center; color: #d63384; }
-.loadingLine{
-  width:250px;
-  height:8px;
-  background:rgba(255,255,255,0.6);
-  border-radius:20px;
-  overflow:hidden;
-  margin:20px auto 0;
+.loaderBox { text-align: center; color: #d63384; }
+.loadingLine {
+  width: 250px;
+  height: 8px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px auto 0;
 }
 
-.loadingFill{
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg, #ff6b81, #d63384);
-  animation:loading 1.5s linear forwards;
+.loadingFill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff6b81, #d63384);
+  animation: loading 1.5s linear forwards;
 }
 
-@keyframes loading{ 100%{ width:100%; } }
+@keyframes loading { 100%{ width: 100%; } }
 
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  padding:15px 8%;
-  z-index:9999;
-  background:rgba(255, 255, 255, 0.4);
-  backdrop-filter:blur(12px);
+/* HEADER & NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 5%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(230, 100, 150, 0.15);
 }
 
-.logo{ 
-  font-family:"Great Vibes",cursive; 
-  font-size:32px; 
-  color:#d63384; 
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo { 
+  font-family: "Great Vibes", cursive !important; 
+  font-size: 32px !important; 
+  color: #d63384 !important; 
   font-weight: bold;
 }
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:120px 20px 60px;
+header ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
 }
 
-.heroLeft h3{ font-size:24px; color:#c2185b; margin-bottom:10px; }
-
-.heroLeft h1{
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  font-family:"Great Vibes",cursive;
-  color: #d63384;
-  margin-bottom:20px;
-  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+header ul li a {
+  color: #c2185b !important;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.heroLeft p{ 
-  font-size:18px; 
-  color:#5c243c !important; 
-  max-width:650px; 
-  margin:0 auto 35px;
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.heroLeft h3 { font-size: 24px; color: #c2185b !important; margin-bottom: 10px; }
+
+.heroLeft h1 {
+  font-size: clamp(2.8rem, 8vw, 5rem) !important;
+  font-family: "Great Vibes", cursive !important;
+  color: #d63384 !important;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.9);
+}
+
+.heroLeft p { 
+  font-size: 18px; 
+  color: #5c243c !important; 
+  max-width: 650px; 
+  margin: 0 auto 35px;
   line-height: 1.6;
   font-weight: 500;
 }
 
-.heroButtons{
+.heroButtons {
   display: flex;
   gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.heroButtons button{
-  padding:14px 32px;
-  border-radius:50px;
-  font-size:16px;
-  font-weight:600;
-  color:#ffffff !important;
-  border:none;
-  background:linear-gradient(45deg, #ff6b81, #ff4757) !important;
-  cursor:pointer;
-  box-shadow:0 10px 20px rgba(255, 71, 87, 0.3);
+.heroButtons button {
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff !important;
+  border: none !important;
+  background: linear-gradient(45deg, #ff6b81, #ff4757) !important;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
   transition: transform 0.2s ease;
 }
 
-.heroButtons button:active{
-  transform: scale(0.95);
-}
+.heroButtons button:active { transform: scale(0.95); }
 
-/* সেকশন ও গ্লাস কার্ড */
-section{
-  padding: 60px 20px;
+/* SECTIONS & GLASS CARDS */
+section {
+  padding: 50px 20px;
   text-align: center;
   max-width: 800px;
-  margin: 20px auto;
-  background: rgba(255, 255, 255, 0.45);
+  margin: 25px auto;
+  background: rgba(255, 255, 255, 0.55) !important;
   border-radius: 24px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(214, 51, 132, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(214, 51, 132, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
 }
 
-.title h1{
-  font-family: "Great Vibes", cursive;
-  font-size: 42px;
-  color: #d63384;
-  margin-bottom: 15px;
+h1, h2, h3, h4 { color: #d63384 !important; }
+p, span, div { color: #4a2c3d; }
+
+/* FIX MISSING IMAGES (?) BOXES */
+img[src*="svg"], img[src*="png"], img[src*="jpg"] {
+  max-width: 100%;
+  border-radius: 15px;
 }
 
-/* ফ্লোটিং ইমোজি পজিশন ঠিক করা (যাতে বামে সারি না ধরে) */
-.heart-particle, .flower-particle {
-  position: fixed !important;
+/* Missing image box border fix */
+img:not([src]), img[src=""] {
+  display: none !important;
+}
+
+/* FLOATING LOVE & EMOJI ANIMATION FIX */
+.floating-container, [class*="heart"], [class*="flower"], [class*="balloon"] {
+  position: absolute;
   pointer-events: none;
-  z-index: 10;
-  animation: floatUp 4s linear infinite;
 }
 
-@keyframes floatUp {
-  0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+/* FLOATING CONTROLS (RIGHT BOTTOM) */
+#floatingControls, .floating-controls {
+  position: fixed !important;
+  right: 20px !important;
+  bottom: 25px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  z-index: 99999 !important;
 }
 
-#floatingControls{
-  position:fixed;
-  right:20px;
-  bottom:25px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  z-index:99999;
+#floatingControls button, .floating-controls button {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  font-size: 18px !important;
+  color: #ffffff !important;
+  background: linear-gradient(45deg, #ff6b81, #d63384) !important;
+  border: none !important;
+  box-shadow: 0 6px 15px rgba(214, 51, 132, 0.3) !important;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-#floatingControls button{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  font-size:18px;
-  color:#ffffff !important;
-  background:linear-gradient(45deg, #ff6b81, #d63384) !important;
-  border:none;
-  box-shadow:0 6px 15px rgba(214, 51, 132, 0.3);
-  cursor:pointer;
-  display: flex;
-  align-items: center;
+/* OVERLAY POPUP */
+#celebrationOverlay {
+  position: fixed;
+  inset: 0;
+  display: none;
   justify-content: center;
-}
-
-#celebrationOverlay{
-  position:fixed;
-  inset:0;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
-  background:rgba(255, 221, 225, 0.95);
-  backdrop-filter:blur(12px);
-  z-index:999999;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: rgba(255, 238, 242, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 999999;
   padding: 20px;
 }
 
-#celebrationOverlay h1{ font-size: clamp(2.2rem, 6vw, 4rem); color: #d63384; font-family: "Great Vibes", cursive; }
-#celebrationOverlay h2{ font-size: 26px; color: #c2185b; margin: 15px 0; }
-#celebrationOverlay p{ margin-bottom: 25px; color: #5c243c; }
+#celebrationOverlay h1 { 
+  font-size: clamp(2.2rem, 6vw, 4rem) !important; 
+  color: #d63384 !important; 
+  font-family: "Great Vibes", cursive !important; 
+}
 
-#celebrateBtn{
-  padding:14px 38px;
-  border-radius:50px;
-  font-size:17px;
-  color:#fff;
-  border:none;
-  background:linear-gradient(45deg,#ff6b81,#d63384);
+#celebrateBtn {
+  padding: 14px 38px;
+  border-radius: 50px;
+  font-size: 17px;
+  color: #fff !important;
+  border: none;
+  background: linear-gradient(45deg,#ff6b81,#d63384) !important;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
 }

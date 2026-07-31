@@ -305,15 +305,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: none;
-    }
-
-    .photo-placeholder-text {
-      font-size: 12px;
-      color: #d81b60;
-      text-align: center;
-      padding: 10px;
-      font-weight: 600;
     }
 
     /* ACTION BUTTONS */
@@ -534,7 +525,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ================= 💌 LOVE LETTER MODAL ================= */
+    /* ================= 💌 LOVE LETTER & STORY MODALS ================= */
     .modal-overlay {
       display: none; position: fixed; top: 0; left: 0;
       width: 100%; height: 100%; background: rgba(0,0,0,0.5);
@@ -573,7 +564,7 @@
     .lightbox-overlay img { max-width: 85%; max-height: 80%; border-radius: 15px; box-shadow: 0 10px 30px rgba(255,255,255,0.2); }
 
     /* STORY BOXES */
-    .story-box { background: #ffffff; padding: 12px 15px; border-radius: 12px; margin-top: 10px; border-left: 4px solid #ff4081; }
+    .story-box { background: #ffffff; padding: 12px 15px; border-radius: 12px; margin-top: 10px; border-left: 4px solid #ff4081; cursor: pointer; }
     .story-box h4 { color: #c2185b; font-size: 14px; }
     .story-box p { font-size: 13px; color: #777; }
 
@@ -653,12 +644,12 @@
           Every heartbeat reminds me how lucky I am to have you. Happy Birthday My Princess ❤️
         </div>
 
-      <!-- PRINCESS PHOTO FIXED -->
-      <div class="photo-upload-container">
-        <div class="photo-frame" style="overflow: hidden; cursor: default;">
-          <img src="5D35A340-1722-4FEC-A38E-CF09CB0D1A5B.jpeg" alt="My Princess" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;">
+        <!-- PRINCESS PHOTO FIXED -->
+        <div class="photo-upload-container">
+          <div class="photo-frame" style="overflow: hidden; cursor: default;">
+            <img src="5D35A340-1722-4FEC-A38E-CF09CB0D1A5B.jpeg" alt="My Princess">
+          </div>
         </div>
-      </div>
 
         <!-- ACTION BUTTONS -->
         <div class="action-buttons">
@@ -712,30 +703,30 @@
       </div>
 
       <!-- OUR LOVE STORY -->
-<div class="card" id="story">
-  <h3>❤️ Our Love Story ❤️</h3>
-  <p>Every Picture Tells A Story...</p>
-  
-  <div class="story-box" onclick="openStoryPage('First Meet', '57CA438D-0FB2-4D1E-A6BF-E0FBC9FF2EA8.jpeg', 'I still remember the first time our eyes met. I had no idea that a simple meeting would turn into the most beautiful blessing of my life. 🌸💝')">
-    <h4>🌸 First Meet</h4>
-    <p>The day my life changed forever...</p>
-  </div>
+      <div class="card" id="story">
+        <h3>❤️ Our Love Story ❤️</h3>
+        <p>Every Picture Tells A Story...</p>
+        
+        <div class="story-box" onclick="openStoryPage('First Meet', '57CA438D-0FB2-4D1E-A6BF-E0FBC9FF2EA8.jpeg', 'I still remember the first time our eyes met. I had no idea that a simple meeting would turn into the most beautiful blessing of my life. 🌸💝')">
+          <h4>🌸 First Meet</h4>
+          <p>The day my life changed forever...</p>
+        </div>
 
-  <div class="story-box" onclick="openStoryPage('First Love', 'F17DBA86-F441-4002-9124-50D4D434EB6A.jpeg', 'I never knew what true love felt like until you came into my life. Falling in love with you was the easiest and best thing I have ever done. You are my first love, my current love, and my forever love! ✨❤️')">
-    <h4>💖 First Love</h4>
-    <p>When I realized you are the one for me.</p>
-  </div>
+        <div class="story-box" onclick="openStoryPage('First Love', 'F17DBA86-F441-4002-9124-50D4D434EB6A.jpeg', 'I never knew what true love felt like until you came into my life. Falling in love with you was the easiest and best thing I have ever done. You are my first love, my current love, and my forever love! ✨❤️')">
+          <h4>💖 First Love</h4>
+          <p>When I realized you are the one for me.</p>
+        </div>
 
-  <div class="story-box" onclick="openStoryPage('First Birthday Together', 'C31E7042-62BA-462F-B978-602B25CD0FAD.jpeg', 'Celebrating your special day with you for the very first time is pure magic! Watching your face light up when you smile is the greatest gift of all. Here’s to making every upcoming birthday just as magical, hand in hand. Happy Birthday, my love! 🎉💖')">
-    <h4>🎂 First Birthday Together</h4>
-    <p>A precious memory cherished forever.</p>
-  </div>
+        <div class="story-box" onclick="openStoryPage('First Birthday Together', 'C31E7042-62BA-462F-B978-602B25CD0FAD.jpeg', 'Celebrating your special day with you for the very first time is pure magic! Watching your face light up when you smile is the greatest gift of all. Here’s to making every upcoming birthday just as magical, hand in hand. Happy Birthday, my love! 🎉💖')">
+          <h4>🎂 First Birthday Together</h4>
+          <p>A precious memory cherished forever.</p>
+        </div>
 
-  <div class="story-box" onclick="openStoryPage('Forever & Always', '4F5C5422-DCE8-487D-A2D6-28C98DA04B5A.jpeg', 'Hand in hand, heart to heart. Through every laugh, every tear, and every step of this beautiful journey, I promise to hold your hand through it all. You are my today, my tomorrow, and my forever & always! ❤️✨')">
-    <h4>💍 Forever & Always</h4>
-    <p>Hand in hand, forever together ❤️</p>
-  </div>
-</div>
+        <div class="story-box" onclick="openStoryPage('Forever & Always', '4F5C5422-DCE8-487D-A2D6-28C98DA04B5A.jpeg', 'Hand in hand, heart to heart. Through every laugh, every tear, and every step of this beautiful journey, I promise to hold your hand through it all. You are my today, my tomorrow, and my forever & always! ❤️✨')">
+          <h4>💍 Forever & Always</h4>
+          <p>Hand in hand, forever together ❤️</p>
+        </div>
+      </div>
 
       <!-- 📸 FEATURE 4: PREMIUM PHOTO GALLERY -->
       <div class="card" id="memories">
@@ -806,6 +797,16 @@
     </div>
   </div>
 
+  <!-- STORY MODAL -->
+  <div class="modal-overlay" id="storyModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeStoryModal()">✖</button>
+      <h3 id="storyTitle" style="color: #d81b60; margin-bottom: 10px;">Story</h3>
+      <img id="storyImg" src="" alt="Story Photo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 12px;">
+      <p id="storyText" style="font-size: 14px; color: #444; line-height: 1.6; text-align: left;"></p>
+    </div>
+  </div>
+
   <!-- GALLERY LIGHTBOX -->
   <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
     <img id="lightboxImg" src="" alt="Enlarged Memory">
@@ -858,19 +859,7 @@
       }, 80);
     }
 
-    // 3. PRINCESS PHOTO UPLOAD
-    function loadPhoto(event) {
-      const reader = new FileReader();
-      reader.onload = function(){
-        const output = document.getElementById('previewImg');
-        output.src = reader.result;
-        output.style.display = 'block';
-        document.querySelector('.photo-placeholder-text').style.display = 'none';
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-
-    // 4. WE ARE TOGETHER COUNTDOWN
+    // 3. WE ARE TOGETHER COUNTDOWN
     const startDate = new Date(2023, 0, 1); 
     function updateCountdown() {
       const now = new Date();
@@ -883,7 +872,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 5. 🎈 BALLOON BURST FUNCTION (TRIGGERED ON CANDLE BLOW)
+    // 4. 🎈 BALLOON BURST FUNCTION (TRIGGERED ON CANDLE BLOW)
     const balloonEmojis = ['🎈', '🎈', '🎈', '💖', '🎉', '🎈', '✨'];
     function triggerBalloonBurst() {
       for (let i = 0; i < 25; i++) {
@@ -904,7 +893,7 @@
       }
     }
 
-    // 6. 🎂 FULLSCREEN CAKE SEQUENTIAL CLICK LOGIC
+    // 5. 🎂 FULLSCREEN CAKE SEQUENTIAL CLICK LOGIC
     let cakeStep = 0;
 
     function startCakeSequence() {
@@ -954,18 +943,29 @@
       }
     }
 
-    // 7. GIFT BOX INTERACTION
+    // 6. GIFT BOX INTERACTION
     function openGift() {
       const msg = document.getElementById('giftMsg');
       msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
     }
 
-    // 8. LOVE LETTER MODAL
+    // 7. LOVE LETTER MODAL
     function openLoveLetter() {
       document.getElementById('letterModal').style.display = 'flex';
     }
     function closeLoveLetter() {
       document.getElementById('letterModal').style.display = 'none';
+    }
+
+    // 8. STORY MODAL
+    function openStoryPage(title, img, text) {
+      document.getElementById('storyTitle').innerText = title;
+      document.getElementById('storyImg').src = img;
+      document.getElementById('storyText').innerText = text;
+      document.getElementById('storyModal').style.display = 'flex';
+    }
+    function closeStoryModal() {
+      document.getElementById('storyModal').style.display = 'none';
     }
 
     // 9. GALLERY LIGHTBOX
@@ -989,8 +989,9 @@
       document.body.appendChild(emoji);
       setTimeout(() => emoji.remove(), 6000);
     }
-    setInterval(createEmoji, 400);
-  </script>
 
+    // Trigger floating emojis every 800ms
+    setInterval(createEmoji, 800);
+  </script>
 </body>
 </html>

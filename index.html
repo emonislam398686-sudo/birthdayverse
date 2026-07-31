@@ -1,315 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BirthdayVerse - Happy Birthday My Princess</title>
-  <!-- Google Fonts for Cursive Title -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  <title>BirthdayVerse V3 ❤️</title>
 
-    body {
-      background: #fff0f3;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-    }
-
-    /* ================= 1. LOADING SCREEN ================= */
-    #loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #ffc3a0 0%, #ffafbd 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
-
-    /* Circular Spinner */
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(255, 255, 255, 0.4);
-      border-top: 4px solid #ffffff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-bottom: 30px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .loading-title {
-      font-size: 26px;
-      font-weight: 700;
-      color: #d81b60;
-      margin-bottom: 8px;
-    }
-
-    .loading-sub {
-      font-size: 15px;
-      color: #7b1fa2;
-      margin-bottom: 25px;
-    }
-
-    /* Progress Bar */
-    .progress-bar-container {
-      width: 250px;
-      height: 8px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #ff4081, #d81b60);
-      border-radius: 10px;
-      transition: width 0.1s linear;
-    }
-
-    /* ================= 2. LANDING SCREEN ================= */
-    #landing-screen {
-      display: none;
-      text-align: center;
-      padding: 30px 20px;
-      max-width: 400px;
-      width: 100%;
-    }
-
-    .cursive-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 48px;
-      color: #d81b60;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .landing-subtitle {
-      font-size: 22px;
-      font-weight: 700;
-      color: #c2185b;
-      margin-bottom: 15px;
-    }
-
-    .landing-msg {
-      font-size: 14px;
-      color: #4a4a4a;
-      line-height: 1.5;
-      margin-bottom: 30px;
-    }
-
-    .celebrate-btn {
-      background: linear-gradient(45deg, #ff5252, #ff4081);
-      color: white;
-      border: none;
-      padding: 12px 35px;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(255, 64, 129, 0.4);
-      transition: transform 0.2s ease;
-    }
-
-    .celebrate-btn:active {
-      transform: scale(0.95);
-    }
-
-    /* ================= 3. MAIN DASHBOARD ================= */
-    #main-dashboard {
-      display: none;
-      width: 100%;
-      max-width: 420px;
-      min-height: 100vh;
-      background: linear-gradient(180deg, #ffffff 0%, #fff0f3 100%);
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      padding-top: 20px;
-    }
-
-    /* Header Bar */
-    .header {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-    }
-
-    .header-logo {
-      font-family: 'Great Vibes', cursive;
-      font-size: 28px;
-      color: #d81b60;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Dashboard Content */
-    .dashboard-content {
-      text-align: center;
-      margin-top: 60px;
-      padding: 0 25px;
-    }
-
-    .dash-h2 {
-      font-size: 24px;
-      font-weight: 700;
-      color: #c2185b;
-      margin-bottom: 5px;
-    }
-
-    .dash-cursive {
-      font-family: 'Great Vibes', cursive;
-      font-size: 44px;
-      color: #d81b60;
-      margin-bottom: 20px;
-    }
-
-    .dash-msg {
-      font-size: 15px;
-      color: #4a4a4a;
-      line-height: 1.6;
-      margin-bottom: 35px;
-    }
-
-    /* Action Buttons */
-    .action-btn {
-      display: block;
-      width: 100%;
-      background: linear-gradient(90deg, #ff5252, #ff4081);
-      color: white;
-      border: none;
-      padding: 14px 0;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 25px;
-      margin-bottom: 15px;
-      box-shadow: 0 6px 15px rgba(255, 64, 129, 0.3);
-      cursor: pointer;
-    }
-
-    /* Floating Side Buttons */
-    .floating-controls {
-      position: absolute;
-      right: 20px;
-      bottom: 60px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .float-icon-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: #ff4081;
-      color: white;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      box-shadow: 0 4px 10px rgba(255, 64, 129, 0.4);
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
+
 <body>
 
-  <!-- 1. LOADING SCREEN -->
-  <div id="loading-screen">
-    <div class="spinner"></div>
-    <div class="loading-title">Loading Your Surprise...</div>
-    <div class="loading-sub">Preparing Love ❤️</div>
-    <div class="progress-bar-container">
-      <div class="progress-bar" id="progress-bar"></div>
-    </div>
-  </div>
-
-  <!-- 2. LANDING SCREEN -->
-  <div id="landing-screen">
-    <div class="cursive-title">🎉 HAPPY BIRTHDAY 🎉</div>
-    <div class="landing-subtitle">My Princess ❤️</div>
-    <div class="landing-msg">
-      May every dream of yours come true. Stay happy forever!
-    </div>
-    <button class="celebrate-btn" onclick="openDashboard()">Celebrate 🎆</button>
-  </div>
-
-  <!-- 3. MAIN DASHBOARD -->
-  <div id="main-dashboard">
-    <div class="header">
-      <div class="header-logo">❤️ BirthdayVerse</div>
-    </div>
-
-    <div class="dashboard-content">
-      <div class="dash-h2">Happy Birthday</div>
-      <div class="dash-cursive">My Princess ❤️</div>
-      <div class="dash-msg">
-        Every heartbeat reminds me how lucky I am to have you. Happy Birthday My Princess ❤️
+  <div id="loader">
+    <div class="loaderBox">
+      <h1>Loading Your Surprise...</h1>
+      <p>Preparing Love ❤️</p>
+      <div class="loadingLine">
+        <div class="loadingFill"></div>
       </div>
-
-      <button class="action-btn">Open My Heart ❤️</button>
-      <button class="action-btn">Our Memories 📸</button>
-    </div>
-
-    <!-- Floating Right Side Buttons -->
-    <div class="floating-controls">
-      <button class="float-icon-btn">🎵</button>
-      <button class="float-icon-btn">🔗</button>
-      <button class="float-icon-btn">↑</button>
     </div>
   </div>
 
-  <script>
-    // Simulate Loading Screen
-    let progress = 0;
-    const progressBar = document.getElementById('progress-bar');
-    const loadingScreen = document.getElementById('loading-screen');
-    const landingScreen = document.getElementById('landing-screen');
+  <header>
+    <nav>
+      <div class="logo">❤️ BirthdayVerse</div>
+    </nav>
+  </header>
 
-    const interval = setInterval(() => {
-      progress += 5;
-      progressBar.style.width = progress + '%';
+  <section class="hero" id="home">
+    <div class="heroLeft">
+      <h3>Happy Birthday</h3>
+      <h1>My Princess ❤️</h1>
+      <p id="typingText">Every heartbeat reminds me how lucky I am to have you. Happy Birthday My Princess ❤️</p>
+      <div class="heroButtons">
+        <button id="startBtn">Open My Heart ❤️</button>
+        <button id="galleryBtn">Our Memories 📸</button>
+      </div>
+    </div>
+  </section>
 
-      if (progress >= 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          loadingScreen.style.opacity = '0';
-          setTimeout(() => {
-            loadingScreen.style.display = 'none';
-            landingScreen.style.display = 'block';
-          }, 500);
-        }, 300);
-      }
-    }, 100);
+  <section id="story">
+    <div class="title">
+      <h1>Our Love Story ❤️</h1>
+    </div>
+    <div class="storyContent">
+      <p>You make every single day brighter just by being in it. May your special day be filled with endless warmth, sweet smiles, and unbounded happiness!</p>
+    </div>
+  </section>
 
-    // Switch to Dashboard Screen
-    function openDashboard() {
-      landingScreen.style.display = 'none';
-      const dash = document.getElementById('main-dashboard');
-      dash.style.display = 'flex';
-    }
-  </script>
+  <section id="gallery">
+    <div class="title">
+      <h1>📸 Our Beautiful Memories</h1>
+    </div>
+    <p>Every photo is a beautiful memory ❤️</p>
+  </section>
+
+  <div id="celebrationOverlay">
+    <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+    <h2>My Princess ❤️</h2>
+    <p>May every dream of yours come true. Stay happy forever!</p>
+    <button id="celebrateBtn">Celebrate 🎆</button>
+  </div>
+
+  <div id="floatingControls">
+    <button id="musicBtn"><i class="fa-solid fa-music"></i></button>
+    <button id="shareBtn"><i class="fa-solid fa-link"></i></button>
+    <button id="topBtn"><i class="fa-solid fa-arrow-up"></i></button>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="js/app.js"></script>
 </body>
+
 </html>

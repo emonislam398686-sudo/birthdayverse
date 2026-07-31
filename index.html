@@ -280,17 +280,17 @@
       font-weight: 500;
     }
 
-    /* PRINCESS PHOTO OPTION */
+    /* PRINCESS PHOTO OPTION (UPDATED FOR FULL IMAGE DISPLAY) */
     .photo-upload-container {
       margin: 10px 0 25px 0;
       text-align: center;
     }
 
     .photo-frame {
-      width: 140px;
-      height: 140px;
+      width: 220px; /* ফ্রেমের সাইজ বাড়ানো হয়েছে */
+      height: 220px; /* ফ্রেমের সাইজ বাড়ানো হয়েছে */
       margin: 0 auto;
-      border-radius: 50%;
+      border-radius: 20px; /* কার্ডের শেপে সুন্দর করার জন্য */
       border: 3px dashed #ff4081;
       display: flex;
       justify-content: center;
@@ -304,7 +304,8 @@
     .photo-frame img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* ছবি না কাটার জন্য contain করা হলো */
+      background: #fff;
     }
 
     /* ACTION BUTTONS */
@@ -553,7 +554,15 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; text-align: center; transition: transform 0.2s ease;
     }
     .gallery-item:hover { transform: translateY(-4px); }
-    .gallery-item img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; }
+    
+    /* UPDATED: GALLERY IMAGE CONTAIN */
+    .gallery-item img { 
+      width: 100%; 
+      height: 130px; 
+      object-fit: contain; 
+      background: #fff0f5;
+      border-radius: 8px; 
+    }
     .gallery-item h5 { font-size: 12px; color: #d81b60; margin-top: 6px; }
 
     .lightbox-overlay {
@@ -561,7 +570,13 @@
       width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85);
       justify-content: center; align-items: center; z-index: 10001;
     }
-    .lightbox-overlay img { max-width: 85%; max-height: 80%; border-radius: 15px; box-shadow: 0 10px 30px rgba(255,255,255,0.2); }
+    .lightbox-overlay img { 
+      max-width: 90%; 
+      max-height: 85%; 
+      object-fit: contain; 
+      border-radius: 12px; 
+      box-shadow: 0 10px 30px rgba(255,255,255,0.2); 
+    }
 
     /* STORY BOXES */
     .story-box { background: #ffffff; padding: 12px 15px; border-radius: 12px; margin-top: 10px; border-left: 4px solid #ff4081; cursor: pointer; }
@@ -646,7 +661,7 @@
 
         <!-- PRINCESS PHOTO FIXED -->
         <div class="photo-upload-container">
-          <div class="photo-frame" style="overflow: hidden; cursor: default;">
+          <div class="photo-frame" style="cursor: default;">
             <img src="5D35A340-1722-4FEC-A38E-CF09CB0D1A5B.jpeg" alt="My Princess">
           </div>
         </div>
@@ -797,12 +812,12 @@
     </div>
   </div>
 
-  <!-- STORY MODAL -->
+  <!-- STORY MODAL (UPDATED FOR FULL IMAGE DISPLAY) -->
   <div class="modal-overlay" id="storyModal">
     <div class="modal-card">
       <button class="modal-close-btn" onclick="closeStoryModal()">✖</button>
       <h3 id="storyTitle" style="color: #d81b60; margin-bottom: 10px;">Story</h3>
-      <img id="storyImg" src="" alt="Story Photo" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 12px;">
+      <img id="storyImg" src="" alt="Story Photo" style="width: 100%; max-height: 280px; object-fit: contain; border-radius: 12px; margin-bottom: 12px; background: #fff0f5;">
       <p id="storyText" style="font-size: 14px; color: #444; line-height: 1.6; text-align: left;"></p>
     </div>
   </div>

@@ -1,83 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BirthdayVerse V3 ❤️</title>
+  <title>BirthdayVerse - Happy Birthday My Princess</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    body {
+      background: linear-gradient(180deg, #ffe5ec 0%, #ffc2d1 100%);
+      color: #4a4a4a;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 28px;
+      color: #ff4757;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #d63384;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* Container Structure */
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Section Card */
+    .section-card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    h2 {
+      color: #ff2a5f;
+      font-size: 20px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ff4757, #ff6b81);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Story & Memory Items */
+    .story-item {
+      background: #ffffff;
+      padding: 12px 15px;
+      border-radius: 12px;
+      margin-top: 10px;
+      border-left: 4px solid #ff4757;
+    }
+
+    .story-item h3 {
+      font-size: 15px;
+      color: #d63384;
+    }
+
+    /* Floating Side Controls */
+    .floating-bar {
+      position: fixed;
+      right: 15px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 99;
+    }
+
+    .float-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #ff4757;
+      color: white;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 10px;
+      background: rgba(255, 255, 255, 0.5);
+      margin-top: 30px;
+    }
+
+    footer h3 {
+      color: #ff2a5f;
+      font-size: 18px;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 2px;
+    }
+  </style>
 </head>
-
 <body>
 
-  <div id="loader">
-    <div class="loaderBox">
-      <h1>Loading Your Surprise...</h1>
-      <p>Preparing Love ❤️</p>
-      <div class="loadingLine">
-        <div class="loadingFill"></div>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-logo">❤️ BirthdayVerse</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+
+    <!-- 1. LETTER SECTION -->
+    <div class="section-card">
+      <h2>💌 A Letter For You</h2>
+      <p>💖 Click To Open</p>
+      <h3 style="color:#d63384; margin-bottom: 5px;">My Princess ❤️</h3>
+      <p>Happy Birthday to the most precious person in my life...</p>
+    </div>
+
+    <!-- 2. MAKE A BIRTHDAY WISH -->
+    <div class="section-card">
+      <h2>🎂 Make A Birthday Wish</h2>
+      <p>Close your eyes, make a wish, and blow out the candle ❤️</p>
+      <div class="btn-group">
+        <button class="btn" onclick="alert('Candle blown! 🕯️✨')">🕯️ Blow Candle</button>
+        <button class="btn" onclick="alert('Cake cut! 🎂🎉')">🎂 Cut Cake</button>
       </div>
     </div>
-  </div>
 
-  <header>
-    <nav>
-      <div class="logo">❤️ BirthdayVerse</div>
-    </nav>
-  </header>
+    <!-- 3. SPECIAL SURPRISE -->
+    <div class="section-card">
+      <h2>🎁 A Special Surprise</h2>
+      <h3 style="color:#ff2a5f; margin-bottom: 5px;">💖 Happy Birthday My Princess 💖</h3>
+      <p>You are the most beautiful chapter of my life. May Allah always keep you smiling. Love You Forever ❤️</p>
+    </div>
 
-  <section class="hero" id="home">
-    <div class="heroLeft">
-      <h3>Happy Birthday</h3>
-      <h1>My Princess ❤️</h1>
-      <p id="typingText">Every heartbeat reminds me how lucky I am to have you. Happy Birthday My Princess ❤️</p>
-      <div class="heroButtons">
-        <button id="startBtn">Open My Heart ❤️</button>
-        <button id="galleryBtn">Our Memories 📸</button>
+    <!-- 4. OUR LOVE STORY -->
+    <div class="section-card" id="story">
+      <h2>❤️ Our Love Story ❤️</h2>
+      <p>Every Picture Tells A Story...</p>
+      
+      <div class="story-item">
+        <h3>🌸 First Meet</h3>
+        <p>Write your first meeting story here.</p>
+      </div>
+
+      <div class="story-item">
+        <h3>💖 First Love</h3>
+        <p>Write your first love memory.</p>
+      </div>
+
+      <div class="story-item">
+        <h3>🎂 First Birthday</h3>
+        <p>Special Birthday Moment...</p>
+      </div>
+
+      <div class="story-item">
+        <h3>💍 Forever</h3>
+        <p>Forever Together ❤️</p>
       </div>
     </div>
-  </section>
 
-  <section id="story">
-    <div class="title">
-      <h1>Our Love Story ❤️</h1>
+    <!-- 5. OUR BEAUTIFUL MEMORIES -->
+    <div class="section-card" id="gallery">
+      <h2>📸 Our Beautiful Memories</h2>
+      <p>Every photo is a beautiful memory ❤️</p>
+      
+      <div class="story-item">
+        <h3>Our First Smile ❤️</h3>
+      </div>
+      <div class="story-item">
+        <h3>Beautiful Day 🌸</h3>
+      </div>
+      <div class="story-item">
+        <h3>Lovely Moment 💖</h3>
+      </div>
+      <div class="story-item">
+        <h3>Forever Together ✨</h3>
+      </div>
     </div>
-    <div class="storyContent">
-      <p>You make every single day brighter just by being in it. May your special day be filled with endless warmth, sweet smiles, and unbounded happiness!</p>
-    </div>
-  </section>
 
-  <section id="gallery">
-    <div class="title">
-      <h1>📸 Our Beautiful Memories</h1>
-    </div>
-    <p>Every photo is a beautiful memory ❤️</p>
-  </section>
-
-  <div id="celebrationOverlay">
-    <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
-    <h2>My Princess ❤️</h2>
-    <p>May every dream of yours come true. Stay happy forever!</p>
-    <button id="celebrateBtn">Celebrate 🎆</button>
   </div>
 
-  <div id="floatingControls">
-    <button id="musicBtn"><i class="fa-solid fa-music"></i></button>
-    <button id="shareBtn"><i class="fa-solid fa-link"></i></button>
-    <button id="topBtn"><i class="fa-solid fa-arrow-up"></i></button>
+  <!-- FLOATING SIDE BUTTONS -->
+  <div class="floating-bar">
+    <button class="float-btn">🎵</button>
+    <button class="float-btn">🌙</button>
+    <button class="float-btn">🔗</button>
+    <button class="float-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
   </div>
 
-  <audio id="bgMusic" loop>
-    <source src="music/birthday.mp3" type="audio/mpeg">
-  </audio>
+  <!-- FOOTER -->
+  <footer>
+    <h3>Forever With Love ❤️</h3>
+    <p>Made Especially For My Princess</p>
+    <p>Designed & Developed By <b>Ifat Islam Imon</b></p>
+  </footer>
 
-  <script src="js/app.js"></script>
 </body>
-
 </html>

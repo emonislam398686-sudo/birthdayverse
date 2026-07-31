@@ -176,3 +176,15 @@ function openStoryPage(title, imgSrc, message) {
   newTab.document.write(htmlContent);
   newTab.document.close();
 }
+/* ======================================================
+    AUTOMATIC BACKGROUND MUSIC ON CELEBRATION
+====================================================== */
+const celebrateButton = document.getElementById("celebrateBtn");
+if (celebrateButton) {
+  celebrateButton.addEventListener("click", () => {
+    const music = document.getElementById("bgMusic");
+    if (music) {
+      music.play().catch((error) => console.log("Audio play blocked by browser:", error));
+    }
+  });
+}

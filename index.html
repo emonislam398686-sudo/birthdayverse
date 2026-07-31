@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BirthdayVerse - Happy Birthday My Princess</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
     * {
@@ -15,244 +16,348 @@
     }
 
     body {
-      background: linear-gradient(180deg, #ffe5ec 0%, #ffc2d1 100%);
-      color: #4a4a4a;
+      background: #ffe3ec;
+      color: #333;
       min-height: 100vh;
-      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 40px;
     }
 
-    /* Navbar */
-    .navbar {
+    /* Top Navbar */
+    .header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 12px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(255, 182, 193, 0.3);
     }
 
-    .nav-logo {
+    .header-logo {
       font-family: 'Great Vibes', cursive;
       font-size: 28px;
-      color: #ff4757;
+      color: #d81b60;
       display: flex;
       align-items: center;
-      gap: 5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 15px;
-      list-style: none;
+      gap: 6px;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #d63384;
-      font-size: 14px;
+      color: #d81b60;
+      font-size: 13px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 450px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Hero Landing Box (Top Section) */
+    .hero-card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 25px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #c2185b;
+    }
+
+    .hero-cursive {
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      color: #d81b60;
+      margin: 5px 0 12px 0;
+      line-height: 1.1;
+    }
+
+    /* Picture Frame / Upload Option */
+    .photo-frame {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 15px auto;
+      border-radius: 50%;
+      border: 3px dashed #ff4081;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff0f5;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .photo-placeholder-text {
+      font-size: 12px;
+      color: #d81b60;
+      text-align: center;
+      padding: 10px;
       font-weight: 600;
     }
 
-    /* Container Structure */
-    .container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Section Card */
-    .section-card {
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      padding: 22px;
+    .hero-msg {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
       margin-bottom: 20px;
-      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.8);
     }
 
-    h2 {
-      color: #ff2a5f;
-      font-size: 20px;
+    /* Curved Pink Action Buttons */
+    .btn-pink {
+      width: 100%;
+      background: linear-gradient(90deg, #ff5252, #ff4081);
+      color: white;
+      border: none;
+      padding: 14px 0;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 30px;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 18px rgba(255, 64, 129, 0.35);
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    /* Content Cards */
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 22px 20px;
+      box-shadow: 0 8px 25px rgba(255, 182, 193, 0.25);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      color: #d81b60;
       margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    p {
+    .card p {
       font-size: 14px;
-      color: #666;
-      line-height: 1.5;
-      margin-bottom: 12px;
+      color: #555;
+      line-height: 1.6;
     }
 
-    .btn-group {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      background: linear-gradient(45deg, #ff4757, #ff6b81);
-      color: white;
-      border: none;
-      padding: 8px 18px;
-      font-size: 13px;
-      font-weight: 600;
-      border-radius: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* Story & Memory Items */
-    .story-item {
+    /* Sub-items */
+    .story-box {
       background: #ffffff;
       padding: 12px 15px;
       border-radius: 12px;
       margin-top: 10px;
-      border-left: 4px solid #ff4757;
+      border-left: 4px solid #ff4081;
     }
 
-    .story-item h3 {
-      font-size: 15px;
-      color: #d63384;
+    .story-box h4 {
+      color: #c2185b;
+      font-size: 14px;
+    }
+
+    .story-box p {
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* Pill Buttons */
+    .pill-btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .pill-btn {
+      background: #ffffff;
+      color: #d81b60;
+      border: 1px solid #ff80ab;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     /* Floating Side Controls */
     .floating-bar {
       position: fixed;
-      right: 15px;
-      bottom: 20px;
+      right: 18px;
+      bottom: 25px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      z-index: 99;
+      gap: 12px;
+      z-index: 999;
     }
 
     .float-btn {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: #ff4757;
+      background: linear-gradient(135deg, #ff4081, #d81b60);
       color: white;
       border: none;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 12px rgba(255, 71, 87, 0.4);
+      font-size: 18px;
+      box-shadow: 0 6px 15px rgba(216, 27, 96, 0.35);
       cursor: pointer;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 25px 10px;
-      background: rgba(255, 255, 255, 0.5);
-      margin-top: 30px;
+      margin-top: 20px;
+      padding: 20px;
     }
 
-    footer h3 {
-      color: #ff2a5f;
+    footer h4 {
+      color: #d81b60;
       font-size: 18px;
+      margin-bottom: 4px;
     }
 
     footer p {
-      font-size: 12px;
-      color: #777;
-      margin-bottom: 2px;
+      font-size: 13px;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="nav-logo">❤️ BirthdayVerse</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#story">Story</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-    </ul>
+  <!-- TOP NAVBAR -->
+  <div class="header">
+    <div class="header-logo">❤️ BirthdayVerse</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#story">Story</a>
+      <a href="#gallery">Gallery</a>
+    </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="home">
 
-    <!-- 1. LETTER SECTION -->
-    <div class="section-card">
-      <h2>💌 A Letter For You</h2>
-      <p>💖 Click To Open</p>
-      <h3 style="color:#d63384; margin-bottom: 5px;">My Princess ❤️</h3>
-      <p>Happy Birthday to the most precious person in my life...</p>
+    <!-- TOP HERO SECTION (Princess Title + Picture Option + Buttons) -->
+    <div class="hero-card">
+      <div class="hero-h2">Happy Birthday</div>
+      <div class="hero-cursive">My Princess ❤️</div>
+      
+      <!-- Picture Add/Upload Option -->
+      <div class="photo-frame" onclick="document.getElementById('fileInput').click()">
+        <span class="photo-placeholder-text">📷 Click to add Princess Photo</span>
+        <img id="previewImg" src="" alt="Princess">
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="loadPhoto(event)">
+
+      <div class="hero-msg">
+        Every heartbeat reminds me how lucky I am to have you. Happy Birthday My Princess ❤️
+      </div>
+
+      <a href="#letter" class="btn-pink">Open My Heart ❤️</a>
+      <a href="#memories" class="btn-pink">Our Memories 📸</a>
+    </div>
+
+    <!-- 1. A LETTER FOR YOU -->
+    <div class="card" id="letter">
+      <h3>💌 A Letter For You</h3>
+      <p style="color: #ff4081; font-weight: 600;">💖 Click To Open</p>
+      <p style="margin-top: 8px;"><b>My Princess ❤️</b><br>Happy Birthday to the most precious person in my life...</p>
     </div>
 
     <!-- 2. MAKE A BIRTHDAY WISH -->
-    <div class="section-card">
-      <h2>🎂 Make A Birthday Wish</h2>
+    <div class="card">
+      <h3>🎂 Make A Birthday Wish</h3>
       <p>Close your eyes, make a wish, and blow out the candle ❤️</p>
-      <div class="btn-group">
-        <button class="btn" onclick="alert('Candle blown! 🕯️✨')">🕯️ Blow Candle</button>
-        <button class="btn" onclick="alert('Cake cut! 🎂🎉')">🎂 Cut Cake</button>
+      <div class="pill-btn-group">
+        <button class="pill-btn" onclick="alert('Candle blown! 🕯️✨')">🕯️ Blow Candle</button>
+        <button class="pill-btn" onclick="alert('Cake cut! 🎂🎉')">🎂 Cut Cake</button>
       </div>
     </div>
 
-    <!-- 3. SPECIAL SURPRISE -->
-    <div class="section-card">
-      <h2>🎁 A Special Surprise</h2>
-      <h3 style="color:#ff2a5f; margin-bottom: 5px;">💖 Happy Birthday My Princess 💖</h3>
-      <p>You are the most beautiful chapter of my life. May Allah always keep you smiling. Love You Forever ❤️</p>
+    <!-- 3. A SPECIAL SURPRISE -->
+    <div class="card">
+      <h3>🎁 A Special Surprise</h3>
+      <p style="color: #d81b60; font-weight: 700; font-size: 15px;">💕 Happy Birthday My Princess 💕</p>
+      <p style="margin-top: 5px;">You are the most beautiful chapter of my life. May Allah always keep you smiling. Love You Forever ❤️</p>
     </div>
 
     <!-- 4. OUR LOVE STORY -->
-    <div class="section-card" id="story">
-      <h2>❤️ Our Love Story ❤️</h2>
+    <div class="card" id="story">
+      <h3>❤️ Our Love Story ❤️</h3>
       <p>Every Picture Tells A Story...</p>
       
-      <div class="story-item">
-        <h3>🌸 First Meet</h3>
+      <div class="story-box">
+        <h4>🌸 First Meet</h4>
         <p>Write your first meeting story here.</p>
       </div>
-
-      <div class="story-item">
-        <h3>💖 First Love</h3>
+      <div class="story-box">
+        <h4>💖 First Love</h4>
         <p>Write your first love memory.</p>
       </div>
-
-      <div class="story-item">
-        <h3>🎂 First Birthday</h3>
+      <div class="story-box">
+        <h4>🎂 First Birthday</h4>
         <p>Special Birthday Moment...</p>
       </div>
-
-      <div class="story-item">
-        <h3>💍 Forever</h3>
+      <div class="story-box">
+        <h4>💍 Forever</h4>
         <p>Forever Together ❤️</p>
       </div>
     </div>
 
     <!-- 5. OUR BEAUTIFUL MEMORIES -->
-    <div class="section-card" id="gallery">
-      <h2>📸 Our Beautiful Memories</h2>
+    <div class="card" id="memories">
+      <h3>📸 Our Beautiful Memories</h3>
       <p>Every photo is a beautiful memory ❤️</p>
-      
-      <div class="story-item">
-        <h3>Our First Smile ❤️</h3>
+
+      <div class="story-box">
+        <h4>Our First Smile ❤️</h4>
       </div>
-      <div class="story-item">
-        <h3>Beautiful Day 🌸</h3>
+      <div class="story-box">
+        <h4>Beautiful Day 🌸</h4>
       </div>
-      <div class="story-item">
-        <h3>Lovely Moment 💖</h3>
+      <div class="story-box">
+        <h4>Lovely Moment 💖</h4>
       </div>
-      <div class="story-item">
-        <h3>Forever Together ✨</h3>
+      <div class="story-box">
+        <h4>Forever Together ✨</h4>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <h4>Forever With Love ❤️</h4>
+      <p>Made Especially For My Princess</p>
+      <p style="margin-top: 4px;">Designed & Developed By <b>Ifat Islam Imon</b></p>
+    </footer>
 
   </div>
 
@@ -264,12 +369,19 @@
     <button class="float-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <h3>Forever With Love ❤️</h3>
-    <p>Made Especially For My Princess</p>
-    <p>Designed & Developed By <b>Ifat Islam Imon</b></p>
-  </footer>
+  <script>
+    // Script to handle image upload preview
+    function loadPhoto(event) {
+      const reader = new FileReader();
+      reader.onload = function(){
+        const output = document.getElementById('previewImg');
+        output.src = reader.result;
+        output.style.display = 'block';
+        document.querySelector('.photo-placeholder-text').style.display = 'none';
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
 
 </body>
 </html>

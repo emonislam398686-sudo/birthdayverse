@@ -229,3 +229,18 @@ img:not([src]), img[src=""] {
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
 }
+/* STORY BOXES HOVER & CURSOR EFFECT */
+.story-box { 
+  background: #ffffff; 
+  padding: 12px 15px; 
+  border-radius: 12px; 
+  margin-top: 10px; 
+  border-left: 4px solid #ff4081; 
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.story-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.2);
+}
